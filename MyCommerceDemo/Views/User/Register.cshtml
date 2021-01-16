@@ -1,4 +1,6 @@
-﻿        <!-- Start Bradcaump area -->
+﻿@model MyCommerceDemo.Models.RegisterUserViewModel
+
+< !--Start Bradcaump area -->
 <div class="ht__bradcaump__area bg-image--6">
     <div class="container">
         <div class="row">
@@ -23,23 +25,35 @@
             <div class="col-lg-6 col-12">
                 <div class="my__account__wrapper">
                     <h3 class="account__title">Registrati</h3>
-                    <form action="#">
+                    <form action="/user/register" method="post">
                         <div class="account__form">
                             <div class="input__box">
                                 <label>Email <span>*</span></label>
-                                <input type="email">
+                                <input type="email" name="email" id="email">
                             </div>
                             <div class="input__box">
-                                <label>Password<span>*</span></label>
-                                <input type="password">
+                                <label>Nome</label>
+                                <input type="text" name="nome" id="nome">
                             </div>
                             <div class="input__box">
-                                <label>Conferma Password<span>*</span></label>
-                                <input type="password">
+                                <label>Cognome</label>
+                                <input type="text" name="cognome" id="cognome">
+                            </div>
+                            <div class="input__box">
+                                <label>Password <span>*</span></label>
+                                <input type="password" name="password" id="password">
+                            </div>
+                            <div class="input__box">
+                                <label>Conferma password <span>*</span></label>
+                                <input type="password" name="passwordconfirm" id="passwordconfirm">
                             </div>
                             <div class="form__btn">
                                 <button>Registrati</button>
                             </div>
+                            @if (!string.IsNullOrEmpty(Model.Message))
+                            {
+                                <p>@Model.Message</p>
+                            }
                         </div>
                     </form>
                 </div>

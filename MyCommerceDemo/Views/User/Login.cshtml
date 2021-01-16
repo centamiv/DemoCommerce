@@ -1,4 +1,6 @@
-﻿        <!-- Start Bradcaump area -->
+﻿@model MyCommerceDemo.Models.LoginUserViewModel
+
+<!-- Start Bradcaump area -->
 <div class="ht__bradcaump__area bg-image--6">
     <div class="container">
         <div class="row">
@@ -23,19 +25,23 @@
             <div class="col-lg-6 col-12">
                 <div class="my__account__wrapper">
                     <h3 class="account__title">Accedi</h3>
-                    <form action="/user/check" method="post">
+                    <form action="/user/login" method="post">
                         <div class="account__form">
                             <div class="input__box">
                                 <label>Nome utente o e-mail <span>*</span></label>
                                 <input type="text" name="username" id="username">
                             </div>
                             <div class="input__box">
-                                <label>Password<span>*</span></label>
+                                <label>Password <span>*</span></label>
                                 <input type="password" name="password" id="password">
                             </div>
                             <div class="form__btn">
                                 <button type="submit">Accedi</button>
                             </div>
+                            @if (!string.IsNullOrEmpty(Model.Message))
+                            {
+                                <p>@Model.Message</p>
+                            }
                             <a class="forget_pass" href="#">Hai perduto la password?</a>
                         </div>
                     </form>
