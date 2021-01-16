@@ -1,0 +1,1086 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="onelightnetModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="listinimarche">
+          <Key>
+            <PropertyRef Name="idlistino" />
+          </Key>
+          <Property Name="idlistino" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descrizionelistino" Type="varchar(max)" />
+          <Property Name="note" Type="varchar(max)" />
+          <Property Name="idmarca" Type="bigint" />
+          <Property Name="descrizionemarca" Type="varchar(max)" />
+          <Property Name="codicelistino" Type="varchar(max)" />
+          <Property Name="tipolistino" Type="varchar(max)" />
+          <Property Name="categorialistino" Type="varchar(max)" />
+          <Property Name="dataaggiornamento" Type="datetime" />
+          <Property Name="listinoivato" Type="varchar(max)" />
+          <Property Name="selezionato" Type="bit" />
+          <Property Name="idaziendamaster" Type="bigint" />
+          <Property Name="aziendamaster" Type="varchar(max)" />
+          <Property Name="utente" Type="varchar(max)" />
+          <Property Name="dataoramodifica" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="inuso" Type="varchar(max)" />
+          <Property Name="sconto1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sconto2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sconto3" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sconto4" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ricarico1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ricarico2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="datainiziovalidità" Type="datetime" />
+          <Property Name="datafinevalidità" Type="datetime" />
+          <Property Name="divisa" Type="varchar(max)" />
+          <Property Name="abilitaconversionedivisa" Type="bit" />
+          <Property Name="percmaggiorazione" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="idlistinocliente" Type="bigint" />
+        </EntityType>
+        <EntityType Name="listinoworktemp">
+          <Key>
+            <PropertyRef Name="idarticolo" />
+          </Key>
+          <Property Name="idarticolo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ivavendita" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sconto" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="unitàmisura" Type="varchar(max)" />
+          <Property Name="gruppo" Type="varchar(max)" />
+          <Property Name="prezzofornitore" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco1pf" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco2pf" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco3pf" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco4pf" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="deltapf" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ric1pf" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzodiacquistoscontatoricaricato" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ricaricosupacq" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzounitarioazienda" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco1pa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco2pa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco3pa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco4pa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="deltapa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ric1pa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzounitariodivendita1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ric1pv" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzounitariodivendita2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="codicearticolodafornitore" Type="varchar(max)" />
+          <Property Name="idbollacaricoscarico" Type="bigint" />
+          <Property Name="pesoarticolo" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="motivoscarto" Type="varchar(max)" />
+          <Property Name="codicearticolo" Type="varchar(max)" />
+          <Property Name="descrizionearticolo" Type="varchar(max)" />
+          <Property Name="descrizionebrevearticolo" Type="varchar(max)" />
+          <Property Name="quantitàfinaleincarico" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="quantitàincarico" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="codiceinterno" Type="varchar(max)" />
+          <Property Name="descrizionefornitore" Type="varchar(max)" />
+          <Property Name="idfornitore" Type="bigint" />
+          <Property Name="codiceabarrearticolo" Type="varchar(max)" />
+          <Property Name="descrizioneestesaarticolo" Type="varchar(max)" />
+          <Property Name="numeropezziperimballo" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="prezzototaleievendita" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzototaleicvendita" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="larghezza" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="lunghezza" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="altezza" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="unitàdimisuradim" Type="varchar(max)" />
+          <Property Name="pesototale" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sviluppomisure" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="dataoramodifica" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="statoarticolo" Type="varchar(max)" />
+          <Property Name="utente" Type="varchar(max)" />
+          <Property Name="dataelaborazione" Type="datetime" />
+          <Property Name="oraelaborazione" Type="varchar(max)" />
+          <Property Name="quantità" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="tipologiamateriale" Type="varchar(max)" />
+          <Property Name="statocommessa" Type="varchar(max)" />
+          <Property Name="gruppoomogeneo" Type="varchar(max)" />
+          <Property Name="codiceinternocommessa" Type="varchar(max)" />
+          <Property Name="dataprimaregistrazione" Type="datetime" />
+          <Property Name="idmagazzinodidestinazione" Type="bigint" />
+          <Property Name="descrizionemagazzinodidestinazione" Type="varchar(max)" />
+          <Property Name="caricoscarico" Type="varchar(max)" />
+          <Property Name="primoimportosconto" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="secondoimportosconto" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzominimo" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzomassimo" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzocorrente" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzomedioponderato" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="importoivavendita" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ric2pa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="idmagazzinoselezionato" Type="bigint" />
+          <Property Name="valoresconto" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzomanuale" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="colore" Type="varchar(max)" />
+          <Property Name="note" Type="varchar(max)" />
+          <Property Name="idmaxicodice" Type="bigint" />
+          <Property Name="descrizionemaxicodice" Type="varchar(max)" />
+          <Property Name="codicemaxicodice" Type="varchar(max)" />
+          <Property Name="idaziendamaster" Type="bigint" />
+          <Property Name="aziendamaster" Type="varchar(max)" />
+          <Property Name="prezzototaleieacquisto" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="importoivaacquisto" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ivaacquisto" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzototaleicacquisto" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="idbollaincaricoscaricotemp" Type="bigint" />
+          <Property Name="datacaricoscarico" Type="datetime" />
+          <Property Name="idordinealfornitore" Type="bigint" />
+          <Property Name="numeroordinealfornitore" Type="varchar(max)" />
+          <Property Name="dataordinealfornitore" Type="datetime" />
+          <Property Name="idfornitoreordinealfornitore" Type="bigint" />
+          <Property Name="selezionato" Type="bit" />
+          <Property Name="idarticolodamagnormale" Type="bigint" />
+          <Property Name="idmarca" Type="bigint" />
+          <Property Name="idlistino" Type="bigint" />
+          <Property Name="descrizionelistino" Type="varchar(max)" />
+          <Property Name="prezzolistinoaut" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzolistinoman" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="deltapl" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ricaricoperpl" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="importoricaricoperpl" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="immaginestato" Type="varbinary(max)" />
+          <Property Name="descrizionemarca" Type="varchar(max)" />
+          <Property Name="ricarico2perpl" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="deltapv" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="idprenotazione" Type="bigint" />
+          <Property Name="idlistamaxiarticoloassociato" Type="bigint" />
+          <Property Name="prenotato" Type="bit" />
+          <Property Name="numseqdaofferta" Type="bigint" />
+          <Property Name="numseqdaconfordinecl" Type="bigint" />
+          <Property Name="numseqdaordinealfo" Type="bigint" />
+          <Property Name="numseqdascaricoinmag" Type="bigint" />
+          <Property Name="numseqdagestddt" Type="bigint" />
+          <Property Name="idofferta" Type="bigint" />
+          <Property Name="nummanualeofferta" Type="varchar(max)" />
+          <Property Name="dataofferta" Type="datetime" />
+          <Property Name="quantitàdaofferta" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="quantitàdaconfordinecl" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="idconfordinecl" Type="bigint" />
+          <Property Name="nummanualeconfordinecl" Type="varchar(max)" />
+          <Property Name="dataconfordinecl" Type="datetime" />
+          <Property Name="idazmasterchifainserim" Type="bigint" />
+          <Property Name="quantitàordinealfornitore" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="idconfordinedalfornitore" Type="bigint" />
+          <Property Name="nummanualeconforddalfornitore" Type="varchar(max)" />
+          <Property Name="dataconfordinedalfornitore" Type="datetime" />
+          <Property Name="quantitàprenotata" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="idcosahaeffettprenotazione" Type="bigint" />
+          <Property Name="nummancosahaeffettprenotazione" Type="varchar(max)" />
+          <Property Name="dataprenotazione" Type="datetime" />
+          <Property Name="cosahaeffettprenotazione" Type="varchar(max)" />
+          <Property Name="quantitàcaricatadaddtforn" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="quantitàtotalearrivatadaddtforn" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="iddistintadicaricoinmagazzino" Type="bigint" />
+          <Property Name="datacaricoinmagazzino" Type="datetime" />
+          <Property Name="nummanddtfornitore" Type="varchar(max)" />
+          <Property Name="dataddtfornitore" Type="datetime" />
+          <Property Name="idmagazzinodidestcarico" Type="bigint" />
+          <Property Name="descmagazzinodidestcarico" Type="varchar(max)" />
+          <Property Name="quantitàscaricatadaddtemesso" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="quantitàtotaleconsegnatadaddtemesso" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="nummanddtemesso" Type="varchar(max)" />
+          <Property Name="dataddtemesso" Type="datetime" />
+          <Property Name="idmagazzinodestscaricdaddt" Type="bigint" />
+          <Property Name="descmagazzinodestscaricodaddt" Type="varchar(max)" />
+          <Property Name="quantitàfatturata" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="idfatturaemessa" Type="bigint" />
+          <Property Name="datafatturaemessa" Type="datetime" />
+          <Property Name="nummanualefatturaemessa" Type="varchar(max)" />
+          <Property Name="dataconsegnapresuntadafornitore" Type="datetime" />
+          <Property Name="dataconsegnaprevistaalcliente" Type="datetime" />
+          <Property Name="iddatigeneraliofferta" Type="bigint" />
+          <Property Name="numeroofferta" Type="bigint" />
+          <Property Name="idcliente" Type="bigint" />
+          <Property Name="codicec" Type="bigint" />
+          <Property Name="cliente" Type="varchar(max)" />
+          <Property Name="siglalegale" Type="varchar(max)" />
+          <Property Name="comunelegale" Type="varchar(max)" />
+          <Property Name="sottoprovincia" Type="varchar(max)" />
+          <Property Name="marca" Type="varchar(max)" />
+          <Property Name="listino" Type="varchar(max)" />
+          <Property Name="numsequenziale1" Type="bigint" />
+          <Property Name="numsequenziale2" Type="bigint" />
+          <Property Name="numsequenziale3" Type="bigint" />
+          <Property Name="capitolato" Type="varchar(max)" />
+          <Property Name="zonaprincipale" Type="varchar(max)" />
+          <Property Name="percorso1" Type="varchar(max)" />
+          <Property Name="file1" Type="varchar(max)" />
+          <Property Name="percorso2" Type="varchar(max)" />
+          <Property Name="file2" Type="varchar(max)" />
+          <Property Name="zonaintervento" Type="varchar(max)" />
+          <Property Name="numerotabelle" Type="bigint" />
+          <Property Name="iddatemp" Type="bigint" />
+          <Property Name="iduser" Type="bigint" />
+          <Property Name="prezzounitario" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="percsconto1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="percsconto2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="percsconto3" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="percsconto4" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="percricarico1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="percricarico2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="periva" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totaleivaesclusa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totaleivacompresa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="immaginearticolopiccola" Type="varbinary(max)" />
+          <Property Name="percorsoimmaginepiccola" Type="varchar(max)" />
+          <Property Name="nomefileimmaginepiccola" Type="varchar(max)" />
+          <Property Name="immaginearticologrande" Type="varbinary(max)" />
+          <Property Name="percorsoimmaginegrande" Type="varchar(max)" />
+          <Property Name="nomefileimmaginegrande" Type="varchar(max)" />
+          <Property Name="scontodalistino" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="immaginearticologrande1" Type="varbinary(max)" />
+          <Property Name="percorsoimmaginegrande1" Type="varchar(max)" />
+          <Property Name="nomefileimmaginegrande1" Type="varchar(max)" />
+          <Property Name="tipoarticolo" Type="varchar(max)" />
+          <Property Name="immaginetipoarticolo" Type="varbinary(max)" />
+          <Property Name="prezzounitarioscontatoricaricato" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="idarticolodalistino" Type="bigint" />
+          <Property Name="quantitàimpegnata" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="quantitàevasa" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="quantitàdaevadere" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="posizionescafale1" Type="varchar(max)" />
+          <Property Name="posizionescafale2" Type="varchar(max)" />
+          <Property Name="posizionescafale3" Type="varchar(max)" />
+          <Property Name="deposito" Type="varchar(max)" />
+          <Property Name="codiva" Type="varchar(max)" />
+          <Property Name="codconto" Type="varchar(max)" />
+          <Property Name="descconto" Type="varchar(max)" />
+          <Property Name="causale" Type="varchar(max)" />
+          <Property Name="margine" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="situazioneart1" Type="varchar(max)" />
+          <Property Name="imagsituazioneart1" Type="varbinary(max)" />
+          <Property Name="situazioneart2" Type="varchar(max)" />
+          <Property Name="imagsituazioneart2" Type="varbinary(max)" />
+          <Property Name="movimentodareavere" Type="varchar(max)" />
+          <Property Name="numseqddtfornitore" Type="bigint" />
+          <Property Name="iddelddtfornitore" Type="bigint" />
+          <Property Name="nummandelddtfornitore" Type="varchar(max)" />
+          <Property Name="datadelddtfornitore" Type="datetime" />
+          <Property Name="quantitàdaddtfornitore" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="numseqddtazienda" Type="bigint" />
+          <Property Name="iddelddtazienda" Type="bigint" />
+          <Property Name="nummandelddtazienda" Type="varchar(max)" />
+          <Property Name="datadelddtazienda" Type="datetime" />
+          <Property Name="quantitàdaddtazienda" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="numseqfatturafornitore" Type="bigint" />
+          <Property Name="idfatturafornitore" Type="bigint" />
+          <Property Name="nummanfatturafornitore" Type="varchar(max)" />
+          <Property Name="datafatturafornitore" Type="datetime" />
+          <Property Name="quantitàdafatturafornitore" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="numseqfatturaazienda" Type="bigint" />
+          <Property Name="idfatturaazienda" Type="bigint" />
+          <Property Name="nummanfatturaazienda" Type="varchar(max)" />
+          <Property Name="datafatturaazienda" Type="datetime" />
+          <Property Name="quantitàdafatturaazienda" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="codiceraee1" Type="varchar(max)" />
+          <Property Name="descrizioneraee1" Type="varchar(max)" />
+          <Property Name="importoraeevendita1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="importoraeeacquisto1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="codiceraee2" Type="varchar(max)" />
+          <Property Name="descrizioneraee2" Type="varchar(max)" />
+          <Property Name="importoraeevendita2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="importoraeeacquisto2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="codiceraee3" Type="varchar(max)" />
+          <Property Name="descrizioneraee3" Type="varchar(max)" />
+          <Property Name="importoraeevendita3" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="importoraeeacquisto3" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzonettoaziendamanuale" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="codcontropartitavendita" Type="varchar(max)" />
+          <Property Name="desccontropartitavendita" Type="varchar(max)" />
+          <Property Name="codcontropartitaacquisto" Type="varchar(max)" />
+          <Property Name="desccontropartitaacquisto" Type="varchar(max)" />
+          <Property Name="codconai" Type="varchar(max)" />
+          <Property Name="descconai" Type="varchar(max)" />
+          <Property Name="soggettoaconai" Type="varchar(max)" />
+          <Property Name="tipologiaconai" Type="varchar(max)" />
+          <Property Name="quantitàscortaminima" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="quantitàscortamassima" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="prezzoaggiornato" Type="bit" />
+          <Property Name="prezzounitarioscontricmanuale" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="marginereale" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="tuteweb">
+          <Key>
+            <PropertyRef Name="codice" />
+          </Key>
+          <Property Name="codice" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="utente" Type="varchar(max)" />
+          <Property Name="pswd" Type="varchar(max)" />
+          <Property Name="abilitazione" Type="varchar(max)" />
+          <Property Name="nome" Type="varchar(max)" />
+          <Property Name="cognome" Type="varchar(max)" />
+          <Property Name="selezionato" Type="bit" />
+          <Property Name="mail" Type="varchar(max)" />
+          <Property Name="idaziendamaster" Type="bigint" />
+          <Property Name="aziendamaster" Type="varchar(max)" />
+          <Property Name="gruppoprimario" Type="varchar(max)" />
+          <Property Name="grupposecondario" Type="varchar(max)" />
+          <Property Name="idcliente" Type="bigint" />
+          <Property Name="denominazionecliente" Type="varchar(max)" />
+          <Property Name="usaordini" Type="bigint" />
+          <Property Name="usalistini" Type="bigint" />
+          <Property Name="usareclami" Type="bigint" />
+          <Property Name="usaverbali" Type="bigint" />
+          <Property Name="usafatclienti" Type="bigint" />
+          <Property Name="usafatfornitori" Type="bigint" />
+          <Property Name="idazindamasterinonelight" Type="bigint" />
+          <Property Name="mailutstaffassegnato" Type="varchar(max)" />
+          <Property Name="dbsustessarete" Type="bigint" />
+          <Property Name="note" Type="varchar(max)" />
+          <Property Name="linkprivacyazmaster" Type="varchar(max)" />
+          <Property Name="server" Type="varchar(max)" />
+          <Property Name="usacoefk" Type="bigint" />
+          <Property Name="usarappintervento" Type="bigint" />
+          <Property Name="usaaccantarticoli" Type="bigint" />
+          <Property Name="usavisualizcorsi" Type="bigint" />
+          <Property Name="cambiautenti" Type="bigint" />
+          <Property Name="veditutticli" Type="bigint" />
+          <Property Name="vedituttifor" Type="bigint" />
+          <Property Name="usaofferte" Type="bigint" />
+          <Property Name="Usaappuntamenti" Type="bigint" />
+          <Property Name="Usainterrogazioni" Type="bigint" />
+          <Property Name="Usaeventi" Type="bigint" />
+          <Property Name="Vediglialtricli" Type="bigint" />
+          <Property Name="Vedisoloassegnati" Type="bigint" />
+          <Property Name="Cambiastatiaccan" Type="bigint" />
+          <Property Name="tipouteperdashboard" Type="varchar(max)" />
+          <Property Name="Shopoweb" Type="varchar(max)" />
+        </EntityType>
+        <EntityContainer Name="onelightnetModelStoreContainer">
+          <EntitySet Name="listinimarche" EntityType="Self.listinimarche" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="listinoworktemp" EntityType="Self.listinoworktemp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tuteweb" EntityType="Self.tuteweb" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="onelightnetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="onelightnetEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="listinimarche" EntityType="onelightnetModel.listinimarche" />
+          <EntitySet Name="listinoworktemp" EntityType="onelightnetModel.listinoworktemp" />
+          <EntitySet Name="tuteweb" EntityType="onelightnetModel.tuteweb" />
+        </EntityContainer>
+        <EntityType Name="listinimarche">
+          <Key>
+            <PropertyRef Name="idlistino" />
+          </Key>
+          <Property Name="idlistino" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descrizionelistino" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idmarca" Type="Int64" />
+          <Property Name="descrizionemarca" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codicelistino" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tipolistino" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="categorialistino" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataaggiornamento" Type="DateTime" Precision="3" />
+          <Property Name="listinoivato" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="selezionato" Type="Boolean" />
+          <Property Name="idaziendamaster" Type="Int64" />
+          <Property Name="aziendamaster" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="utente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataoramodifica" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="inuso" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sconto1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sconto2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sconto3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sconto4" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ricarico1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ricarico2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="datainiziovalidità" Type="DateTime" Precision="3" />
+          <Property Name="datafinevalidità" Type="DateTime" Precision="3" />
+          <Property Name="divisa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="abilitaconversionedivisa" Type="Boolean" />
+          <Property Name="percmaggiorazione" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="idlistinocliente" Type="Int64" />
+        </EntityType>
+        <EntityType Name="listinoworktemp">
+          <Key>
+            <PropertyRef Name="idarticolo" />
+          </Key>
+          <Property Name="idarticolo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ivavendita" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sconto" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="unitàmisura" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="gruppo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="prezzofornitore" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco1pf" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco2pf" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco3pf" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco4pf" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="deltapf" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ric1pf" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzodiacquistoscontatoricaricato" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ricaricosupacq" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzounitarioazienda" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco1pa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco2pa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco3pa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco4pa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="deltapa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ric1pa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzounitariodivendita1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ric1pv" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzounitariodivendita2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="codicearticolodafornitore" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idbollacaricoscarico" Type="Int64" />
+          <Property Name="pesoarticolo" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="motivoscarto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codicearticolo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descrizionearticolo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descrizionebrevearticolo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="quantitàfinaleincarico" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="quantitàincarico" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="codiceinterno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descrizionefornitore" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idfornitore" Type="Int64" />
+          <Property Name="codiceabarrearticolo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descrizioneestesaarticolo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="numeropezziperimballo" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="prezzototaleievendita" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzototaleicvendita" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="larghezza" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="lunghezza" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="altezza" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="unitàdimisuradim" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pesototale" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sviluppomisure" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="dataoramodifica" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="statoarticolo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="utente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataelaborazione" Type="DateTime" Precision="3" />
+          <Property Name="oraelaborazione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="quantità" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="tipologiamateriale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="statocommessa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="gruppoomogeneo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codiceinternocommessa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataprimaregistrazione" Type="DateTime" Precision="3" />
+          <Property Name="idmagazzinodidestinazione" Type="Int64" />
+          <Property Name="descrizionemagazzinodidestinazione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="caricoscarico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="primoimportosconto" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="secondoimportosconto" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzominimo" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzomassimo" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzocorrente" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzomedioponderato" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="importoivavendita" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ric2pa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="idmagazzinoselezionato" Type="Int64" />
+          <Property Name="valoresconto" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzomanuale" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="colore" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idmaxicodice" Type="Int64" />
+          <Property Name="descrizionemaxicodice" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codicemaxicodice" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idaziendamaster" Type="Int64" />
+          <Property Name="aziendamaster" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="prezzototaleieacquisto" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="importoivaacquisto" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ivaacquisto" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzototaleicacquisto" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="idbollaincaricoscaricotemp" Type="Int64" />
+          <Property Name="datacaricoscarico" Type="DateTime" Precision="3" />
+          <Property Name="idordinealfornitore" Type="Int64" />
+          <Property Name="numeroordinealfornitore" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataordinealfornitore" Type="DateTime" Precision="3" />
+          <Property Name="idfornitoreordinealfornitore" Type="Int64" />
+          <Property Name="selezionato" Type="Boolean" />
+          <Property Name="idarticolodamagnormale" Type="Int64" />
+          <Property Name="idmarca" Type="Int64" />
+          <Property Name="idlistino" Type="Int64" />
+          <Property Name="descrizionelistino" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="prezzolistinoaut" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzolistinoman" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="deltapl" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ricaricoperpl" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="importoricaricoperpl" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="immaginestato" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="descrizionemarca" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ricarico2perpl" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="deltapv" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="idprenotazione" Type="Int64" />
+          <Property Name="idlistamaxiarticoloassociato" Type="Int64" />
+          <Property Name="prenotato" Type="Boolean" />
+          <Property Name="numseqdaofferta" Type="Int64" />
+          <Property Name="numseqdaconfordinecl" Type="Int64" />
+          <Property Name="numseqdaordinealfo" Type="Int64" />
+          <Property Name="numseqdascaricoinmag" Type="Int64" />
+          <Property Name="numseqdagestddt" Type="Int64" />
+          <Property Name="idofferta" Type="Int64" />
+          <Property Name="nummanualeofferta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataofferta" Type="DateTime" Precision="3" />
+          <Property Name="quantitàdaofferta" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="quantitàdaconfordinecl" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="idconfordinecl" Type="Int64" />
+          <Property Name="nummanualeconfordinecl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataconfordinecl" Type="DateTime" Precision="3" />
+          <Property Name="idazmasterchifainserim" Type="Int64" />
+          <Property Name="quantitàordinealfornitore" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="idconfordinedalfornitore" Type="Int64" />
+          <Property Name="nummanualeconforddalfornitore" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataconfordinedalfornitore" Type="DateTime" Precision="3" />
+          <Property Name="quantitàprenotata" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="idcosahaeffettprenotazione" Type="Int64" />
+          <Property Name="nummancosahaeffettprenotazione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataprenotazione" Type="DateTime" Precision="3" />
+          <Property Name="cosahaeffettprenotazione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="quantitàcaricatadaddtforn" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="quantitàtotalearrivatadaddtforn" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="iddistintadicaricoinmagazzino" Type="Int64" />
+          <Property Name="datacaricoinmagazzino" Type="DateTime" Precision="3" />
+          <Property Name="nummanddtfornitore" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataddtfornitore" Type="DateTime" Precision="3" />
+          <Property Name="idmagazzinodidestcarico" Type="Int64" />
+          <Property Name="descmagazzinodidestcarico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="quantitàscaricatadaddtemesso" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="quantitàtotaleconsegnatadaddtemesso" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="nummanddtemesso" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataddtemesso" Type="DateTime" Precision="3" />
+          <Property Name="idmagazzinodestscaricdaddt" Type="Int64" />
+          <Property Name="descmagazzinodestscaricodaddt" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="quantitàfatturata" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="idfatturaemessa" Type="Int64" />
+          <Property Name="datafatturaemessa" Type="DateTime" Precision="3" />
+          <Property Name="nummanualefatturaemessa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataconsegnapresuntadafornitore" Type="DateTime" Precision="3" />
+          <Property Name="dataconsegnaprevistaalcliente" Type="DateTime" Precision="3" />
+          <Property Name="iddatigeneraliofferta" Type="Int64" />
+          <Property Name="numeroofferta" Type="Int64" />
+          <Property Name="idcliente" Type="Int64" />
+          <Property Name="codicec" Type="Int64" />
+          <Property Name="cliente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="siglalegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="comunelegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sottoprovincia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="marca" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="listino" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="numsequenziale1" Type="Int64" />
+          <Property Name="numsequenziale2" Type="Int64" />
+          <Property Name="numsequenziale3" Type="Int64" />
+          <Property Name="capitolato" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="zonaprincipale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="percorso1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="file1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="percorso2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="file2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="zonaintervento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="numerotabelle" Type="Int64" />
+          <Property Name="iddatemp" Type="Int64" />
+          <Property Name="iduser" Type="Int64" />
+          <Property Name="prezzounitario" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="percsconto1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="percsconto2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="percsconto3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="percsconto4" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="percricarico1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="percricarico2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="periva" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totaleivaesclusa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totaleivacompresa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="immaginearticolopiccola" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="percorsoimmaginepiccola" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nomefileimmaginepiccola" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="immaginearticologrande" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="percorsoimmaginegrande" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nomefileimmaginegrande" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="scontodalistino" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="immaginearticologrande1" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="percorsoimmaginegrande1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nomefileimmaginegrande1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tipoarticolo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="immaginetipoarticolo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="prezzounitarioscontatoricaricato" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="idarticolodalistino" Type="Int64" />
+          <Property Name="quantitàimpegnata" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="quantitàevasa" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="quantitàdaevadere" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="posizionescafale1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="posizionescafale2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="posizionescafale3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="deposito" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codiva" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codconto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descconto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="causale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="margine" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="situazioneart1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="imagsituazioneart1" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="situazioneart2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="imagsituazioneart2" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="movimentodareavere" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="numseqddtfornitore" Type="Int64" />
+          <Property Name="iddelddtfornitore" Type="Int64" />
+          <Property Name="nummandelddtfornitore" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="datadelddtfornitore" Type="DateTime" Precision="3" />
+          <Property Name="quantitàdaddtfornitore" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="numseqddtazienda" Type="Int64" />
+          <Property Name="iddelddtazienda" Type="Int64" />
+          <Property Name="nummandelddtazienda" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="datadelddtazienda" Type="DateTime" Precision="3" />
+          <Property Name="quantitàdaddtazienda" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="numseqfatturafornitore" Type="Int64" />
+          <Property Name="idfatturafornitore" Type="Int64" />
+          <Property Name="nummanfatturafornitore" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="datafatturafornitore" Type="DateTime" Precision="3" />
+          <Property Name="quantitàdafatturafornitore" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="numseqfatturaazienda" Type="Int64" />
+          <Property Name="idfatturaazienda" Type="Int64" />
+          <Property Name="nummanfatturaazienda" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="datafatturaazienda" Type="DateTime" Precision="3" />
+          <Property Name="quantitàdafatturaazienda" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="codiceraee1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descrizioneraee1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="importoraeevendita1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="importoraeeacquisto1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="codiceraee2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descrizioneraee2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="importoraeevendita2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="importoraeeacquisto2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="codiceraee3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descrizioneraee3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="importoraeevendita3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="importoraeeacquisto3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzonettoaziendamanuale" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="codcontropartitavendita" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="desccontropartitavendita" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codcontropartitaacquisto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="desccontropartitaacquisto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codconai" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descconai" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="soggettoaconai" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tipologiaconai" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="quantitàscortaminima" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="quantitàscortamassima" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="prezzoaggiornato" Type="Boolean" />
+          <Property Name="prezzounitarioscontricmanuale" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="marginereale" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="tuteweb">
+          <Key>
+            <PropertyRef Name="codice" />
+          </Key>
+          <Property Name="codice" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="utente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pswd" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="abilitazione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cognome" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="selezionato" Type="Boolean" />
+          <Property Name="mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idaziendamaster" Type="Int64" />
+          <Property Name="aziendamaster" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="gruppoprimario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="grupposecondario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idcliente" Type="Int64" />
+          <Property Name="denominazionecliente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="usaordini" Type="Int64" />
+          <Property Name="usalistini" Type="Int64" />
+          <Property Name="usareclami" Type="Int64" />
+          <Property Name="usaverbali" Type="Int64" />
+          <Property Name="usafatclienti" Type="Int64" />
+          <Property Name="usafatfornitori" Type="Int64" />
+          <Property Name="idazindamasterinonelight" Type="Int64" />
+          <Property Name="mailutstaffassegnato" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dbsustessarete" Type="Int64" />
+          <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="linkprivacyazmaster" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="server" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="usacoefk" Type="Int64" />
+          <Property Name="usarappintervento" Type="Int64" />
+          <Property Name="usaaccantarticoli" Type="Int64" />
+          <Property Name="usavisualizcorsi" Type="Int64" />
+          <Property Name="cambiautenti" Type="Int64" />
+          <Property Name="veditutticli" Type="Int64" />
+          <Property Name="vedituttifor" Type="Int64" />
+          <Property Name="usaofferte" Type="Int64" />
+          <Property Name="Usaappuntamenti" Type="Int64" />
+          <Property Name="Usainterrogazioni" Type="Int64" />
+          <Property Name="Usaeventi" Type="Int64" />
+          <Property Name="Vediglialtricli" Type="Int64" />
+          <Property Name="Vedisoloassegnati" Type="Int64" />
+          <Property Name="Cambiastatiaccan" Type="Int64" />
+          <Property Name="tipouteperdashboard" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Shopoweb" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="onelightnetModelStoreContainer" CdmEntityContainer="onelightnetEntities" >
+          <EntitySetMapping Name="listinimarche">
+            <EntityTypeMapping TypeName="onelightnetModel.listinimarche">
+              <MappingFragment StoreEntitySet="listinimarche">
+                <ScalarProperty Name="idlistinocliente" ColumnName="idlistinocliente" />
+                <ScalarProperty Name="percmaggiorazione" ColumnName="percmaggiorazione" />
+                <ScalarProperty Name="abilitaconversionedivisa" ColumnName="abilitaconversionedivisa" />
+                <ScalarProperty Name="divisa" ColumnName="divisa" />
+                <ScalarProperty Name="datafinevalidità" ColumnName="datafinevalidità" />
+                <ScalarProperty Name="datainiziovalidità" ColumnName="datainiziovalidità" />
+                <ScalarProperty Name="ricarico2" ColumnName="ricarico2" />
+                <ScalarProperty Name="ricarico1" ColumnName="ricarico1" />
+                <ScalarProperty Name="sconto4" ColumnName="sconto4" />
+                <ScalarProperty Name="sconto3" ColumnName="sconto3" />
+                <ScalarProperty Name="sconto2" ColumnName="sconto2" />
+                <ScalarProperty Name="sconto1" ColumnName="sconto1" />
+                <ScalarProperty Name="inuso" ColumnName="inuso" />
+                <ScalarProperty Name="dataoramodifica" ColumnName="dataoramodifica" />
+                <ScalarProperty Name="utente" ColumnName="utente" />
+                <ScalarProperty Name="aziendamaster" ColumnName="aziendamaster" />
+                <ScalarProperty Name="idaziendamaster" ColumnName="idaziendamaster" />
+                <ScalarProperty Name="selezionato" ColumnName="selezionato" />
+                <ScalarProperty Name="listinoivato" ColumnName="listinoivato" />
+                <ScalarProperty Name="dataaggiornamento" ColumnName="dataaggiornamento" />
+                <ScalarProperty Name="categorialistino" ColumnName="categorialistino" />
+                <ScalarProperty Name="tipolistino" ColumnName="tipolistino" />
+                <ScalarProperty Name="codicelistino" ColumnName="codicelistino" />
+                <ScalarProperty Name="descrizionemarca" ColumnName="descrizionemarca" />
+                <ScalarProperty Name="idmarca" ColumnName="idmarca" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="descrizionelistino" ColumnName="descrizionelistino" />
+                <ScalarProperty Name="idlistino" ColumnName="idlistino" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="listinoworktemp">
+            <EntityTypeMapping TypeName="onelightnetModel.listinoworktemp">
+              <MappingFragment StoreEntitySet="listinoworktemp">
+                <ScalarProperty Name="marginereale" ColumnName="marginereale" />
+                <ScalarProperty Name="prezzounitarioscontricmanuale" ColumnName="prezzounitarioscontricmanuale" />
+                <ScalarProperty Name="prezzoaggiornato" ColumnName="prezzoaggiornato" />
+                <ScalarProperty Name="quantitàscortamassima" ColumnName="quantitàscortamassima" />
+                <ScalarProperty Name="quantitàscortaminima" ColumnName="quantitàscortaminima" />
+                <ScalarProperty Name="tipologiaconai" ColumnName="tipologiaconai" />
+                <ScalarProperty Name="soggettoaconai" ColumnName="soggettoaconai" />
+                <ScalarProperty Name="descconai" ColumnName="descconai" />
+                <ScalarProperty Name="codconai" ColumnName="codconai" />
+                <ScalarProperty Name="desccontropartitaacquisto" ColumnName="desccontropartitaacquisto" />
+                <ScalarProperty Name="codcontropartitaacquisto" ColumnName="codcontropartitaacquisto" />
+                <ScalarProperty Name="desccontropartitavendita" ColumnName="desccontropartitavendita" />
+                <ScalarProperty Name="codcontropartitavendita" ColumnName="codcontropartitavendita" />
+                <ScalarProperty Name="prezzonettoaziendamanuale" ColumnName="prezzonettoaziendamanuale" />
+                <ScalarProperty Name="importoraeeacquisto3" ColumnName="importoraeeacquisto3" />
+                <ScalarProperty Name="importoraeevendita3" ColumnName="importoraeevendita3" />
+                <ScalarProperty Name="descrizioneraee3" ColumnName="descrizioneraee3" />
+                <ScalarProperty Name="codiceraee3" ColumnName="codiceraee3" />
+                <ScalarProperty Name="importoraeeacquisto2" ColumnName="importoraeeacquisto2" />
+                <ScalarProperty Name="importoraeevendita2" ColumnName="importoraeevendita2" />
+                <ScalarProperty Name="descrizioneraee2" ColumnName="descrizioneraee2" />
+                <ScalarProperty Name="codiceraee2" ColumnName="codiceraee2" />
+                <ScalarProperty Name="importoraeeacquisto1" ColumnName="importoraeeacquisto1" />
+                <ScalarProperty Name="importoraeevendita1" ColumnName="importoraeevendita1" />
+                <ScalarProperty Name="descrizioneraee1" ColumnName="descrizioneraee1" />
+                <ScalarProperty Name="codiceraee1" ColumnName="codiceraee1" />
+                <ScalarProperty Name="quantitàdafatturaazienda" ColumnName="quantitàdafatturaazienda" />
+                <ScalarProperty Name="datafatturaazienda" ColumnName="datafatturaazienda" />
+                <ScalarProperty Name="nummanfatturaazienda" ColumnName="nummanfatturaazienda" />
+                <ScalarProperty Name="idfatturaazienda" ColumnName="idfatturaazienda" />
+                <ScalarProperty Name="numseqfatturaazienda" ColumnName="numseqfatturaazienda" />
+                <ScalarProperty Name="quantitàdafatturafornitore" ColumnName="quantitàdafatturafornitore" />
+                <ScalarProperty Name="datafatturafornitore" ColumnName="datafatturafornitore" />
+                <ScalarProperty Name="nummanfatturafornitore" ColumnName="nummanfatturafornitore" />
+                <ScalarProperty Name="idfatturafornitore" ColumnName="idfatturafornitore" />
+                <ScalarProperty Name="numseqfatturafornitore" ColumnName="numseqfatturafornitore" />
+                <ScalarProperty Name="quantitàdaddtazienda" ColumnName="quantitàdaddtazienda" />
+                <ScalarProperty Name="datadelddtazienda" ColumnName="datadelddtazienda" />
+                <ScalarProperty Name="nummandelddtazienda" ColumnName="nummandelddtazienda" />
+                <ScalarProperty Name="iddelddtazienda" ColumnName="iddelddtazienda" />
+                <ScalarProperty Name="numseqddtazienda" ColumnName="numseqddtazienda" />
+                <ScalarProperty Name="quantitàdaddtfornitore" ColumnName="quantitàdaddtfornitore" />
+                <ScalarProperty Name="datadelddtfornitore" ColumnName="datadelddtfornitore" />
+                <ScalarProperty Name="nummandelddtfornitore" ColumnName="nummandelddtfornitore" />
+                <ScalarProperty Name="iddelddtfornitore" ColumnName="iddelddtfornitore" />
+                <ScalarProperty Name="numseqddtfornitore" ColumnName="numseqddtfornitore" />
+                <ScalarProperty Name="movimentodareavere" ColumnName="movimentodareavere" />
+                <ScalarProperty Name="imagsituazioneart2" ColumnName="imagsituazioneart2" />
+                <ScalarProperty Name="situazioneart2" ColumnName="situazioneart2" />
+                <ScalarProperty Name="imagsituazioneart1" ColumnName="imagsituazioneart1" />
+                <ScalarProperty Name="situazioneart1" ColumnName="situazioneart1" />
+                <ScalarProperty Name="margine" ColumnName="margine" />
+                <ScalarProperty Name="causale" ColumnName="causale" />
+                <ScalarProperty Name="descconto" ColumnName="descconto" />
+                <ScalarProperty Name="codconto" ColumnName="codconto" />
+                <ScalarProperty Name="codiva" ColumnName="codiva" />
+                <ScalarProperty Name="deposito" ColumnName="deposito" />
+                <ScalarProperty Name="posizionescafale3" ColumnName="posizionescafale3" />
+                <ScalarProperty Name="posizionescafale2" ColumnName="posizionescafale2" />
+                <ScalarProperty Name="posizionescafale1" ColumnName="posizionescafale1" />
+                <ScalarProperty Name="quantitàdaevadere" ColumnName="quantitàdaevadere" />
+                <ScalarProperty Name="quantitàevasa" ColumnName="quantitàevasa" />
+                <ScalarProperty Name="quantitàimpegnata" ColumnName="quantitàimpegnata" />
+                <ScalarProperty Name="idarticolodalistino" ColumnName="idarticolodalistino" />
+                <ScalarProperty Name="prezzounitarioscontatoricaricato" ColumnName="prezzounitarioscontatoricaricato" />
+                <ScalarProperty Name="immaginetipoarticolo" ColumnName="immaginetipoarticolo" />
+                <ScalarProperty Name="tipoarticolo" ColumnName="tipoarticolo" />
+                <ScalarProperty Name="nomefileimmaginegrande1" ColumnName="nomefileimmaginegrande1" />
+                <ScalarProperty Name="percorsoimmaginegrande1" ColumnName="percorsoimmaginegrande1" />
+                <ScalarProperty Name="immaginearticologrande1" ColumnName="immaginearticologrande1" />
+                <ScalarProperty Name="scontodalistino" ColumnName="scontodalistino" />
+                <ScalarProperty Name="nomefileimmaginegrande" ColumnName="nomefileimmaginegrande" />
+                <ScalarProperty Name="percorsoimmaginegrande" ColumnName="percorsoimmaginegrande" />
+                <ScalarProperty Name="immaginearticologrande" ColumnName="immaginearticologrande" />
+                <ScalarProperty Name="nomefileimmaginepiccola" ColumnName="nomefileimmaginepiccola" />
+                <ScalarProperty Name="percorsoimmaginepiccola" ColumnName="percorsoimmaginepiccola" />
+                <ScalarProperty Name="immaginearticolopiccola" ColumnName="immaginearticolopiccola" />
+                <ScalarProperty Name="totaleivacompresa" ColumnName="totaleivacompresa" />
+                <ScalarProperty Name="totaleivaesclusa" ColumnName="totaleivaesclusa" />
+                <ScalarProperty Name="periva" ColumnName="periva" />
+                <ScalarProperty Name="percricarico2" ColumnName="percricarico2" />
+                <ScalarProperty Name="percricarico1" ColumnName="percricarico1" />
+                <ScalarProperty Name="percsconto4" ColumnName="percsconto4" />
+                <ScalarProperty Name="percsconto3" ColumnName="percsconto3" />
+                <ScalarProperty Name="percsconto2" ColumnName="percsconto2" />
+                <ScalarProperty Name="percsconto1" ColumnName="percsconto1" />
+                <ScalarProperty Name="prezzounitario" ColumnName="prezzounitario" />
+                <ScalarProperty Name="iduser" ColumnName="iduser" />
+                <ScalarProperty Name="iddatemp" ColumnName="iddatemp" />
+                <ScalarProperty Name="numerotabelle" ColumnName="numerotabelle" />
+                <ScalarProperty Name="zonaintervento" ColumnName="zonaintervento" />
+                <ScalarProperty Name="file2" ColumnName="file2" />
+                <ScalarProperty Name="percorso2" ColumnName="percorso2" />
+                <ScalarProperty Name="file1" ColumnName="file1" />
+                <ScalarProperty Name="percorso1" ColumnName="percorso1" />
+                <ScalarProperty Name="zonaprincipale" ColumnName="zonaprincipale" />
+                <ScalarProperty Name="capitolato" ColumnName="capitolato" />
+                <ScalarProperty Name="numsequenziale3" ColumnName="numsequenziale3" />
+                <ScalarProperty Name="numsequenziale2" ColumnName="numsequenziale2" />
+                <ScalarProperty Name="numsequenziale1" ColumnName="numsequenziale1" />
+                <ScalarProperty Name="listino" ColumnName="listino" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+                <ScalarProperty Name="sottoprovincia" ColumnName="sottoprovincia" />
+                <ScalarProperty Name="comunelegale" ColumnName="comunelegale" />
+                <ScalarProperty Name="siglalegale" ColumnName="siglalegale" />
+                <ScalarProperty Name="cliente" ColumnName="cliente" />
+                <ScalarProperty Name="codicec" ColumnName="codicec" />
+                <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+                <ScalarProperty Name="numeroofferta" ColumnName="numeroofferta" />
+                <ScalarProperty Name="iddatigeneraliofferta" ColumnName="iddatigeneraliofferta" />
+                <ScalarProperty Name="dataconsegnaprevistaalcliente" ColumnName="dataconsegnaprevistaalcliente" />
+                <ScalarProperty Name="dataconsegnapresuntadafornitore" ColumnName="dataconsegnapresuntadafornitore" />
+                <ScalarProperty Name="nummanualefatturaemessa" ColumnName="nummanualefatturaemessa" />
+                <ScalarProperty Name="datafatturaemessa" ColumnName="datafatturaemessa" />
+                <ScalarProperty Name="idfatturaemessa" ColumnName="idfatturaemessa" />
+                <ScalarProperty Name="quantitàfatturata" ColumnName="quantitàfatturata" />
+                <ScalarProperty Name="descmagazzinodestscaricodaddt" ColumnName="descmagazzinodestscaricodaddt" />
+                <ScalarProperty Name="idmagazzinodestscaricdaddt" ColumnName="idmagazzinodestscaricdaddt" />
+                <ScalarProperty Name="dataddtemesso" ColumnName="dataddtemesso" />
+                <ScalarProperty Name="nummanddtemesso" ColumnName="nummanddtemesso" />
+                <ScalarProperty Name="quantitàtotaleconsegnatadaddtemesso" ColumnName="quantitàtotaleconsegnatadaddtemesso" />
+                <ScalarProperty Name="quantitàscaricatadaddtemesso" ColumnName="quantitàscaricatadaddtemesso" />
+                <ScalarProperty Name="descmagazzinodidestcarico" ColumnName="descmagazzinodidestcarico" />
+                <ScalarProperty Name="idmagazzinodidestcarico" ColumnName="idmagazzinodidestcarico" />
+                <ScalarProperty Name="dataddtfornitore" ColumnName="dataddtfornitore" />
+                <ScalarProperty Name="nummanddtfornitore" ColumnName="nummanddtfornitore" />
+                <ScalarProperty Name="datacaricoinmagazzino" ColumnName="datacaricoinmagazzino" />
+                <ScalarProperty Name="iddistintadicaricoinmagazzino" ColumnName="iddistintadicaricoinmagazzino" />
+                <ScalarProperty Name="quantitàtotalearrivatadaddtforn" ColumnName="quantitàtotalearrivatadaddtforn" />
+                <ScalarProperty Name="quantitàcaricatadaddtforn" ColumnName="quantitàcaricatadaddtforn" />
+                <ScalarProperty Name="cosahaeffettprenotazione" ColumnName="cosahaeffettprenotazione" />
+                <ScalarProperty Name="dataprenotazione" ColumnName="dataprenotazione" />
+                <ScalarProperty Name="nummancosahaeffettprenotazione" ColumnName="nummancosahaeffettprenotazione" />
+                <ScalarProperty Name="idcosahaeffettprenotazione" ColumnName="idcosahaeffettprenotazione" />
+                <ScalarProperty Name="quantitàprenotata" ColumnName="quantitàprenotata" />
+                <ScalarProperty Name="dataconfordinedalfornitore" ColumnName="dataconfordinedalfornitore" />
+                <ScalarProperty Name="nummanualeconforddalfornitore" ColumnName="nummanualeconforddalfornitore" />
+                <ScalarProperty Name="idconfordinedalfornitore" ColumnName="idconfordinedalfornitore" />
+                <ScalarProperty Name="quantitàordinealfornitore" ColumnName="quantitàordinealfornitore" />
+                <ScalarProperty Name="idazmasterchifainserim" ColumnName="idazmasterchifainserim" />
+                <ScalarProperty Name="dataconfordinecl" ColumnName="dataconfordinecl" />
+                <ScalarProperty Name="nummanualeconfordinecl" ColumnName="nummanualeconfordinecl" />
+                <ScalarProperty Name="idconfordinecl" ColumnName="idconfordinecl" />
+                <ScalarProperty Name="quantitàdaconfordinecl" ColumnName="quantitàdaconfordinecl" />
+                <ScalarProperty Name="quantitàdaofferta" ColumnName="quantitàdaofferta" />
+                <ScalarProperty Name="dataofferta" ColumnName="dataofferta" />
+                <ScalarProperty Name="nummanualeofferta" ColumnName="nummanualeofferta" />
+                <ScalarProperty Name="idofferta" ColumnName="idofferta" />
+                <ScalarProperty Name="numseqdagestddt" ColumnName="numseqdagestddt" />
+                <ScalarProperty Name="numseqdascaricoinmag" ColumnName="numseqdascaricoinmag" />
+                <ScalarProperty Name="numseqdaordinealfo" ColumnName="numseqdaordinealfo" />
+                <ScalarProperty Name="numseqdaconfordinecl" ColumnName="numseqdaconfordinecl" />
+                <ScalarProperty Name="numseqdaofferta" ColumnName="numseqdaofferta" />
+                <ScalarProperty Name="prenotato" ColumnName="prenotato" />
+                <ScalarProperty Name="idlistamaxiarticoloassociato" ColumnName="idlistamaxiarticoloassociato" />
+                <ScalarProperty Name="idprenotazione" ColumnName="idprenotazione" />
+                <ScalarProperty Name="deltapv" ColumnName="deltapv" />
+                <ScalarProperty Name="ricarico2perpl" ColumnName="ricarico2perpl" />
+                <ScalarProperty Name="descrizionemarca" ColumnName="descrizionemarca" />
+                <ScalarProperty Name="immaginestato" ColumnName="immaginestato" />
+                <ScalarProperty Name="importoricaricoperpl" ColumnName="importoricaricoperpl" />
+                <ScalarProperty Name="ricaricoperpl" ColumnName="ricaricoperpl" />
+                <ScalarProperty Name="deltapl" ColumnName="deltapl" />
+                <ScalarProperty Name="prezzolistinoman" ColumnName="prezzolistinoman" />
+                <ScalarProperty Name="prezzolistinoaut" ColumnName="prezzolistinoaut" />
+                <ScalarProperty Name="descrizionelistino" ColumnName="descrizionelistino" />
+                <ScalarProperty Name="idlistino" ColumnName="idlistino" />
+                <ScalarProperty Name="idmarca" ColumnName="idmarca" />
+                <ScalarProperty Name="idarticolodamagnormale" ColumnName="idarticolodamagnormale" />
+                <ScalarProperty Name="selezionato" ColumnName="selezionato" />
+                <ScalarProperty Name="idfornitoreordinealfornitore" ColumnName="idfornitoreordinealfornitore" />
+                <ScalarProperty Name="dataordinealfornitore" ColumnName="dataordinealfornitore" />
+                <ScalarProperty Name="numeroordinealfornitore" ColumnName="numeroordinealfornitore" />
+                <ScalarProperty Name="idordinealfornitore" ColumnName="idordinealfornitore" />
+                <ScalarProperty Name="datacaricoscarico" ColumnName="datacaricoscarico" />
+                <ScalarProperty Name="idbollaincaricoscaricotemp" ColumnName="idbollaincaricoscaricotemp" />
+                <ScalarProperty Name="prezzototaleicacquisto" ColumnName="prezzototaleicacquisto" />
+                <ScalarProperty Name="ivaacquisto" ColumnName="ivaacquisto" />
+                <ScalarProperty Name="importoivaacquisto" ColumnName="importoivaacquisto" />
+                <ScalarProperty Name="prezzototaleieacquisto" ColumnName="prezzototaleieacquisto" />
+                <ScalarProperty Name="aziendamaster" ColumnName="aziendamaster" />
+                <ScalarProperty Name="idaziendamaster" ColumnName="idaziendamaster" />
+                <ScalarProperty Name="codicemaxicodice" ColumnName="codicemaxicodice" />
+                <ScalarProperty Name="descrizionemaxicodice" ColumnName="descrizionemaxicodice" />
+                <ScalarProperty Name="idmaxicodice" ColumnName="idmaxicodice" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="colore" ColumnName="colore" />
+                <ScalarProperty Name="prezzomanuale" ColumnName="prezzomanuale" />
+                <ScalarProperty Name="valoresconto" ColumnName="valoresconto" />
+                <ScalarProperty Name="idmagazzinoselezionato" ColumnName="idmagazzinoselezionato" />
+                <ScalarProperty Name="ric2pa" ColumnName="ric2pa" />
+                <ScalarProperty Name="importoivavendita" ColumnName="importoivavendita" />
+                <ScalarProperty Name="prezzomedioponderato" ColumnName="prezzomedioponderato" />
+                <ScalarProperty Name="prezzocorrente" ColumnName="prezzocorrente" />
+                <ScalarProperty Name="prezzomassimo" ColumnName="prezzomassimo" />
+                <ScalarProperty Name="prezzominimo" ColumnName="prezzominimo" />
+                <ScalarProperty Name="secondoimportosconto" ColumnName="secondoimportosconto" />
+                <ScalarProperty Name="primoimportosconto" ColumnName="primoimportosconto" />
+                <ScalarProperty Name="caricoscarico" ColumnName="caricoscarico" />
+                <ScalarProperty Name="descrizionemagazzinodidestinazione" ColumnName="descrizionemagazzinodidestinazione" />
+                <ScalarProperty Name="idmagazzinodidestinazione" ColumnName="idmagazzinodidestinazione" />
+                <ScalarProperty Name="dataprimaregistrazione" ColumnName="dataprimaregistrazione" />
+                <ScalarProperty Name="codiceinternocommessa" ColumnName="codiceinternocommessa" />
+                <ScalarProperty Name="gruppoomogeneo" ColumnName="gruppoomogeneo" />
+                <ScalarProperty Name="statocommessa" ColumnName="statocommessa" />
+                <ScalarProperty Name="tipologiamateriale" ColumnName="tipologiamateriale" />
+                <ScalarProperty Name="quantità" ColumnName="quantità" />
+                <ScalarProperty Name="oraelaborazione" ColumnName="oraelaborazione" />
+                <ScalarProperty Name="dataelaborazione" ColumnName="dataelaborazione" />
+                <ScalarProperty Name="utente" ColumnName="utente" />
+                <ScalarProperty Name="statoarticolo" ColumnName="statoarticolo" />
+                <ScalarProperty Name="dataoramodifica" ColumnName="dataoramodifica" />
+                <ScalarProperty Name="sviluppomisure" ColumnName="sviluppomisure" />
+                <ScalarProperty Name="pesototale" ColumnName="pesototale" />
+                <ScalarProperty Name="unitàdimisuradim" ColumnName="unitàdimisuradim" />
+                <ScalarProperty Name="altezza" ColumnName="altezza" />
+                <ScalarProperty Name="lunghezza" ColumnName="lunghezza" />
+                <ScalarProperty Name="larghezza" ColumnName="larghezza" />
+                <ScalarProperty Name="prezzototaleicvendita" ColumnName="prezzototaleicvendita" />
+                <ScalarProperty Name="prezzototaleievendita" ColumnName="prezzototaleievendita" />
+                <ScalarProperty Name="numeropezziperimballo" ColumnName="numeropezziperimballo" />
+                <ScalarProperty Name="descrizioneestesaarticolo" ColumnName="descrizioneestesaarticolo" />
+                <ScalarProperty Name="codiceabarrearticolo" ColumnName="codiceabarrearticolo" />
+                <ScalarProperty Name="idfornitore" ColumnName="idfornitore" />
+                <ScalarProperty Name="descrizionefornitore" ColumnName="descrizionefornitore" />
+                <ScalarProperty Name="codiceinterno" ColumnName="codiceinterno" />
+                <ScalarProperty Name="quantitàincarico" ColumnName="quantitàincarico" />
+                <ScalarProperty Name="quantitàfinaleincarico" ColumnName="quantitàfinaleincarico" />
+                <ScalarProperty Name="descrizionebrevearticolo" ColumnName="descrizionebrevearticolo" />
+                <ScalarProperty Name="descrizionearticolo" ColumnName="descrizionearticolo" />
+                <ScalarProperty Name="codicearticolo" ColumnName="codicearticolo" />
+                <ScalarProperty Name="motivoscarto" ColumnName="motivoscarto" />
+                <ScalarProperty Name="pesoarticolo" ColumnName="pesoarticolo" />
+                <ScalarProperty Name="idbollacaricoscarico" ColumnName="idbollacaricoscarico" />
+                <ScalarProperty Name="codicearticolodafornitore" ColumnName="codicearticolodafornitore" />
+                <ScalarProperty Name="prezzounitariodivendita2" ColumnName="prezzounitariodivendita2" />
+                <ScalarProperty Name="ric1pv" ColumnName="ric1pv" />
+                <ScalarProperty Name="prezzounitariodivendita1" ColumnName="prezzounitariodivendita1" />
+                <ScalarProperty Name="ric1pa" ColumnName="ric1pa" />
+                <ScalarProperty Name="deltapa" ColumnName="deltapa" />
+                <ScalarProperty Name="sco4pa" ColumnName="sco4pa" />
+                <ScalarProperty Name="sco3pa" ColumnName="sco3pa" />
+                <ScalarProperty Name="sco2pa" ColumnName="sco2pa" />
+                <ScalarProperty Name="sco1pa" ColumnName="sco1pa" />
+                <ScalarProperty Name="prezzounitarioazienda" ColumnName="prezzounitarioazienda" />
+                <ScalarProperty Name="ricaricosupacq" ColumnName="ricaricosupacq" />
+                <ScalarProperty Name="prezzodiacquistoscontatoricaricato" ColumnName="prezzodiacquistoscontatoricaricato" />
+                <ScalarProperty Name="ric1pf" ColumnName="ric1pf" />
+                <ScalarProperty Name="deltapf" ColumnName="deltapf" />
+                <ScalarProperty Name="sco4pf" ColumnName="sco4pf" />
+                <ScalarProperty Name="sco3pf" ColumnName="sco3pf" />
+                <ScalarProperty Name="sco2pf" ColumnName="sco2pf" />
+                <ScalarProperty Name="sco1pf" ColumnName="sco1pf" />
+                <ScalarProperty Name="prezzofornitore" ColumnName="prezzofornitore" />
+                <ScalarProperty Name="gruppo" ColumnName="gruppo" />
+                <ScalarProperty Name="unitàmisura" ColumnName="unitàmisura" />
+                <ScalarProperty Name="sconto" ColumnName="sconto" />
+                <ScalarProperty Name="ivavendita" ColumnName="ivavendita" />
+                <ScalarProperty Name="idarticolo" ColumnName="idarticolo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tuteweb">
+            <EntityTypeMapping TypeName="onelightnetModel.tuteweb">
+              <MappingFragment StoreEntitySet="tuteweb">
+                <ScalarProperty Name="Shopoweb" ColumnName="Shopoweb" />
+                <ScalarProperty Name="tipouteperdashboard" ColumnName="tipouteperdashboard" />
+                <ScalarProperty Name="Cambiastatiaccan" ColumnName="Cambiastatiaccan" />
+                <ScalarProperty Name="Vedisoloassegnati" ColumnName="Vedisoloassegnati" />
+                <ScalarProperty Name="Vediglialtricli" ColumnName="Vediglialtricli" />
+                <ScalarProperty Name="Usaeventi" ColumnName="Usaeventi" />
+                <ScalarProperty Name="Usainterrogazioni" ColumnName="Usainterrogazioni" />
+                <ScalarProperty Name="Usaappuntamenti" ColumnName="Usaappuntamenti" />
+                <ScalarProperty Name="usaofferte" ColumnName="usaofferte" />
+                <ScalarProperty Name="vedituttifor" ColumnName="vedituttifor" />
+                <ScalarProperty Name="veditutticli" ColumnName="veditutticli" />
+                <ScalarProperty Name="cambiautenti" ColumnName="cambiautenti" />
+                <ScalarProperty Name="usavisualizcorsi" ColumnName="usavisualizcorsi" />
+                <ScalarProperty Name="usaaccantarticoli" ColumnName="usaaccantarticoli" />
+                <ScalarProperty Name="usarappintervento" ColumnName="usarappintervento" />
+                <ScalarProperty Name="usacoefk" ColumnName="usacoefk" />
+                <ScalarProperty Name="server" ColumnName="server" />
+                <ScalarProperty Name="linkprivacyazmaster" ColumnName="linkprivacyazmaster" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="dbsustessarete" ColumnName="dbsustessarete" />
+                <ScalarProperty Name="mailutstaffassegnato" ColumnName="mailutstaffassegnato" />
+                <ScalarProperty Name="idazindamasterinonelight" ColumnName="idazindamasterinonelight" />
+                <ScalarProperty Name="usafatfornitori" ColumnName="usafatfornitori" />
+                <ScalarProperty Name="usafatclienti" ColumnName="usafatclienti" />
+                <ScalarProperty Name="usaverbali" ColumnName="usaverbali" />
+                <ScalarProperty Name="usareclami" ColumnName="usareclami" />
+                <ScalarProperty Name="usalistini" ColumnName="usalistini" />
+                <ScalarProperty Name="usaordini" ColumnName="usaordini" />
+                <ScalarProperty Name="denominazionecliente" ColumnName="denominazionecliente" />
+                <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+                <ScalarProperty Name="grupposecondario" ColumnName="grupposecondario" />
+                <ScalarProperty Name="gruppoprimario" ColumnName="gruppoprimario" />
+                <ScalarProperty Name="aziendamaster" ColumnName="aziendamaster" />
+                <ScalarProperty Name="idaziendamaster" ColumnName="idaziendamaster" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="selezionato" ColumnName="selezionato" />
+                <ScalarProperty Name="cognome" ColumnName="cognome" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="abilitazione" ColumnName="abilitazione" />
+                <ScalarProperty Name="pswd" ColumnName="pswd" />
+                <ScalarProperty Name="utente" ColumnName="utente" />
+                <ScalarProperty Name="codice" ColumnName="codice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Nessuno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

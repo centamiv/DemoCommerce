@@ -1843,6 +1843,7 @@ Header Styles
 			}
     .header__area .header__sidebar__right > li.setting__bar__icon {
 	  position: relative;
+      padding-right: 26px;
 	}
       .header__area .header__sidebar__right > li.setting__bar__icon > a {
         background: transparent url("images/icons/icon_setting.png") no-repeat scroll left center;

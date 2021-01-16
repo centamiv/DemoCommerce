@@ -6,12 +6,13 @@ using System.Web.Mvc;
 
 namespace MyCommerceDemo.Controllers
 {
-    public class HomeController : Controller
+    public class CategoryController : Controller
     {
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult List()
         {
             return View();
         }
+
     }
 }
