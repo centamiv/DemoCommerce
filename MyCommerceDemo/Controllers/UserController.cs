@@ -11,7 +11,7 @@ namespace MyCommerceDemo.Controllers
     public class UserController : Controller
     {
 
-        private onelightnetEntities _db;
+        private readonly onelightnetEntities _db;
 
         public UserController()
         {
@@ -43,8 +43,10 @@ namespace MyCommerceDemo.Controllers
             var utente = _db.tuteweb.Where(i => i.idaziendamaster == Const.IdAziendaMaster).Where(i => i.mail == username || i.utente == username).Where(i => i.pswd == password).FirstOrDefault();
             if (utente == null)
             {
-                var model = new LoginUserViewModel();
-                model.Message = "Nome utente o password non validi";
+                var model = new LoginUserViewModel
+                {
+                    Message = "Nome utente o password non validi"
+                };
                 return View(model);
             }
 
@@ -60,6 +62,111 @@ namespace MyCommerceDemo.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        [ActionName("Menu")]
+        public ActionResult MenuGet()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [ActionName("Data")]
+        public ActionResult DataGet()
+        {
+            long idCliente = 0;
+            if (Session["User"] != null)
+            {
+                idCliente = (long)(Session["User"] as MyCommerceDemo.Database.tuteweb).idcliente;
+            }
+
+            var model = new CLIENTI();
+            if (idCliente != 0)
+            {
+                model = _db.CLIENTI.Where(i => i.idcliente == idCliente).FirstOrDefault();
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("DataConfirm")]
+        public ActionResult DataConfirmPost()
+        {
+            long idCliente = 0;
+            if (Session["User"] != null)
+            {
+                idCliente = (long)(Session["User"] as MyCommerceDemo.Database.tuteweb).idcliente;
+            }
+            CLIENTI model;
+            if (idCliente == 0)
+            {
+                model = new CLIENTI();
+            }
+            else
+            {
+                model = _db.CLIENTI.Where(i => i.idcliente == idCliente).FirstOrDefault();
+            }
+
+            var nome = Request["nome"];
+            var ragsoc = Request["ragsoc"];
+            var piva = Request["piva"];
+            var indirizzo = Request["indirizzo"];
+            var comune = Request["comune"];
+            var cap = Request["cap"];
+            var citta = Request["citta"];
+            var sigla = Request["sigla"];
+            var telefono = Request["telefono"];
+            var email = Request["email"];
+
+            model.denominazione = ragsoc;
+            model.contauno = nome ;
+            model.PIVA = piva;
+            model.indirizzolegale = indirizzo;
+            model.comunelegale = comune;
+            model.caplegale = cap;
+            model.cittàlegale = citta;
+            model.siglalegale = sigla;
+            model.telefono1legale = telefono;
+            model.mailcontauno = email;
+            //model.escludidaelencoclienti
+            if (idCliente == 0)
+            {
+                _db.CLIENTI.Add(model);
+            }
+            _db.SaveChanges();
+
+            var user = (Session["User"] as MyCommerceDemo.Database.tuteweb);
+            user.idcliente = model.idcliente;
+            Session["User"] = user;
+
+            return RedirectToAction("Data");
+        }
+
+        [HttpGet]
+        [ActionName("Orders")]
+        public ActionResult OrdersGet()
+        {
+            long idCliente = 0;
+            if (Session["User"] != null)
+            {
+                idCliente = (long)(Session["User"] as MyCommerceDemo.Database.tuteweb).idcliente;
+            }
+
+
+            var model = new List<MyCommerceDemo.Database.datiordineclienteweb>();
+            if (idCliente != 0)
+            {
+                var ordini = _db.datiordineclienteweb
+                    .Where(i => i.idcliente == idCliente)
+                    .Where(i => i.idaziendamaster == Const.IdAziendaMaster)
+                    .OrderByDescending(i => i.dataconsegnaprevista)
+                    .ToList();
+                model.AddRange(ordini);
+            }
+
+            return View(model);
+        }
+
         [HttpPost]
         [ActionName("Register")]
         public ActionResult RegisterPost()
@@ -69,6 +176,8 @@ namespace MyCommerceDemo.Controllers
             var email = Request["email"];
             var password = Request["password"];
             var passwordconfirm = Request["passwordconfirm"];
+            var ragsoc = Request["ragsoc"];
+            var piva = Request["piva"];
 
 
             var model = new RegisterUserViewModel();
@@ -88,15 +197,36 @@ namespace MyCommerceDemo.Controllers
                 return View(model);
             }
 
-            utente = new tuteweb();
-            utente.utente = email;
-            utente.mail = email;
-            utente.nome = nome;
-            utente.cognome = cognome;
-            utente.idaziendamaster = Const.IdAziendaMaster;
-            utente.pswd = password;
-            utente.idcliente = 0;
-            utente.Shopoweb = "Si";
+            long cliente = 0;
+            if (!string.IsNullOrEmpty(piva))
+            {
+                cliente = _db.CLIENTI.Where(i => i.PIVA.Trim() == piva.Trim()).Select(i => i.idcliente).FirstOrDefault();
+                if (cliente == 0)
+                {
+                    var newCliente = new CLIENTI()
+                    {
+                        denominazione = ragsoc,
+                        contattouno = nome + " " + cognome,
+                        PIVA = piva,
+                        mailcontauno = email
+                    };
+                    _db.CLIENTI.Add(newCliente);
+                    _db.SaveChanges();
+                    cliente = newCliente.idcliente;
+                }
+            }
+
+            utente = new tuteweb
+            {
+                utente = email,
+                mail = email,
+                nome = nome,
+                cognome = cognome,
+                idaziendamaster = Const.IdAziendaMaster,
+                pswd = password,
+                idcliente = cliente,
+                Shopoweb = "Si"
+            };
             _db.tuteweb.Add(utente);
             _db.SaveChanges();
 

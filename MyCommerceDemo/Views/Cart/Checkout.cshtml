@@ -1,0 +1,135 @@
+﻿@model MyCommerceDemo.Models.CheckoutCartViewModel
+
+<!-- Start Bradcaump area -->
+<div class="ht__bradcaump__area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bradcaump__inner text-center">
+                    <h2 class="bradcaump-title">Checkout</h2>
+                    <nav class="bradcaump-content">
+                        <a class="breadcrumb_item" href="index.html">Home</a>
+                        <span class="brd-separetor">/</span>
+                        <span class="breadcrumb_item active">Checkout</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Bradcaump area -->
+<!-- Start Checkout Area -->
+<section class="wn__checkout__area section-padding--lg bg__white">
+    <form action="/Cart/Charge" method="POST">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    <div class="customer_details">
+                        <h3>Dati del cliente</h3>
+                        <div class="customar__field">
+                            <div class="input_box">
+                                <label>Denominazione <span>*</span></label>
+                                <input type="text" id="nome" name="nome" value="@Model.Cliente.contauno">
+                            </div>
+                            <div class="input_box">
+                                <label>Ragione sociale</label>
+                                <input type="text" id="ragsoc" name="ragsoc" value="@Model.Cliente.denominazione">
+                            </div>
+                            <div class="input_box">
+                                <label>Partita IVA</label>
+                                <input type="text" id="piva" name="piva" value="@Model.Cliente.PIVA">
+                            </div>
+                            <div class="input_box">
+                                <label>Indirizzo <span>*</span></label>
+                                <input type="text" id="indirizzo" name="indirizzo" value="@Model.Cliente.indirizzolegale">
+                            </div>
+                            <div class="margin_between">
+                                <div class="input_box space_between">
+                                    <label>Comune <span>*</span></label>
+                                    <input type="text" id="comune" name="comune" value="@Model.Cliente.comunelegale">
+                                </div>
+
+                                <div class="input_box space_between">
+                                    <label>CAP <span>*</span></label>
+                                    <input type="text" id="cap" name="cap" value="@Model.Cliente.caplegale">
+                                </div>
+                            </div>
+                            <div class="margin_between">
+                                <div class="input_box space_between">
+                                    <label>Città <span>*</span></label>
+                                    <input type="text" id="citta" name="citta" value="@Model.Cliente.cittàlegale">
+                                </div>
+
+                                <div class="input_box space_between">
+                                    <label>Provincia <span>*</span></label>
+                                    <input type="text" id="sigla" name="sigla" value="@Model.Cliente.siglalegale">
+                                </div>
+                            </div>
+                            <div class="input_box">
+                                <label>Telefono</label>
+                                <input type="text" name="telefono" value="@Model.Cliente.telefono1legale">
+                            </div>
+                            <div class="input_box">
+                                <label>Email</label>
+                                <input type="text" name="email" value="@Model.Cliente.mailcontauno">
+                            </div>
+                            <div class="input_box">
+                                <label>Data consegna  <span>*</span></label>
+                                <input type="text" name="dataconsegna" value="@DateTime.Now.AddDays(3).ToString("dd/MM/yyyy")">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 md-mt-40 sm-mt-40">
+                    <div class="wn__order__box">
+                        <h3 class="onder__title">Il tuo ordine</h3>
+                        <ul class="order__total">
+                            <li>Prodotto</li>
+                            <li>Prezzo</li>
+                        </ul>
+                        <ul class="order_product">
+                            @foreach (var item in Model.Items)
+                            {
+                                <li>@item.Key.descrizionebrevearticolo × @item.Value<span>€ @(item.Key.DiscountPrice*item.Value)</span></li>
+                            }
+                        </ul>
+                        @*<ul class="shipping__method">
+                                <li>
+                                    Spedizione
+                                    <ul>
+                                        <li>
+                                            <input name="shipping_method[0]" data-index="0" value="legacy_flat_rate" checked="checked" type="radio">
+                                            <label>DHL: € 10.00</label>
+                                        </li>
+                                        <li>
+                                            <input name="shipping_method[0]" data-index="0" value="legacy_flat_rate" checked="checked" type="radio">
+                                            <label>Ritiro: € 0.00</label>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>*@
+                        <ul class="total__amount">
+                            <li>Totale <span>€ @Model.Items.Sum(item => item.Key.DiscountPrice * item.Value)</span></li>
+                        </ul>
+                    </div>
+
+
+                    <script src="//checkout.stripe.com/v2/checkout.js"
+                            class="stripe-button"
+                            data-key="@Const.StripePublicKey"
+                            data-locale="auto"
+                            data-description="Arredoluce"
+                            data-currency="eur"
+                            data-email="false"
+                            data-amount="@(Model.Items.Sum(item => item.Key.DiscountPrice * item.Value)*100)">
+                    </script>
+
+
+
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+<!-- End Checkout Area -->

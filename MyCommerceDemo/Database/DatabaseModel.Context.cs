@@ -28,5 +28,9 @@ namespace MyCommerceDemo.Database
         public virtual DbSet<listinimarche> listinimarche { get; set; }
         public virtual DbSet<listinoworktemp> listinoworktemp { get; set; }
         public virtual DbSet<tuteweb> tuteweb { get; set; }
+        public virtual DbSet<articoliordineclienteweb> articoliordineclienteweb { get; set; }
+        public virtual DbSet<datiordineclienteweb> datiordineclienteweb { get; set; }
+        public virtual DbSet<Marchegestite> Marchegestite { get; set; }
+        public virtual DbSet<CLIENTI> CLIENTI { get; set; }
     }
 }

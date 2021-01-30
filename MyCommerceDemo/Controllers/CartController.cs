@@ -1,5 +1,6 @@
 ﻿using MyCommerceDemo.Database;
 using MyCommerceDemo.Models;
+using Stripe.Checkout;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,6 +73,151 @@ namespace MyCommerceDemo.Controllers
             }
 
             return View(cart);
+        }
+
+        [HttpGet]
+        public ActionResult Checkout()
+        {
+            var cart = Session["Cart"] as Dictionary<Product, int>;
+            if (cart == null)
+            {
+                cart = new Dictionary<Product, int>();
+            }
+
+            var model = new CheckoutCartViewModel();
+            model.Items = cart;
+
+            long idCliente = 0;
+            if (Session["User"] != null)
+            {
+                idCliente = (long)(Session["User"] as MyCommerceDemo.Database.tuteweb).idcliente;
+            }
+
+            var cliente = new CLIENTI();
+            if (idCliente != 0)
+            {
+                cliente = _db.CLIENTI.Where(i => i.idcliente == idCliente).FirstOrDefault();
+            }
+
+            model.Cliente = cliente;
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Charge()
+        {
+            var utente = Session["User"] as MyCommerceDemo.Database.tuteweb;
+            var cart = Session["Cart"] as Dictionary<Product, int>;
+
+
+            var myCharge = new Stripe.ChargeCreateOptions
+            {
+                Amount = (long)cart.Sum(item => item.Key.DiscountPrice * item.Value) * 100,
+                Currency = "EUR",
+                ReceiptEmail = Request.Form["stripeEmail"],
+                Description = Const.Title,
+                Source = Request.Form["stripeToken"],
+                Capture = true
+            };
+            var chargeService = new Stripe.ChargeService();
+            Stripe.Charge stripeCharge = chargeService.Create(myCharge);
+
+            if (stripeCharge.Status == "succeeded")
+            {
+                long idCliente = 0;
+                if (Session["User"] != null)
+                {
+                    idCliente = (long)(Session["User"] as MyCommerceDemo.Database.tuteweb).idcliente;
+                }
+                CLIENTI model;
+                if (idCliente == 0)
+                {
+                    model = new CLIENTI();
+                }
+                else
+                {
+                    model = _db.CLIENTI.Where(i => i.idcliente == idCliente).FirstOrDefault();
+                }
+
+                var nome = Request["nome"];
+                var ragsoc = Request["ragsoc"];
+                var piva = Request["piva"];
+                var indirizzo = Request["indirizzo"];
+                var comune = Request["comune"];
+                var cap = Request["cap"];
+                var citta = Request["citta"];
+                var sigla = Request["sigla"];
+                var telefono = Request["telefono"];
+                var email = Request["email"];
+                var dataconsegna = Request["dataconsegna"];
+
+                model.denominazione = ragsoc;
+                model.contauno = nome;
+                model.PIVA = piva;
+                model.indirizzolegale = indirizzo;
+                model.comunelegale = comune;
+                model.caplegale = cap;
+                model.cittàlegale = citta;
+                model.siglalegale = sigla;
+                model.telefono1legale = telefono;
+                model.mailcontauno = email;
+                //model.escludidaelencoclienti
+                if (idCliente == 0)
+                {
+                    _db.CLIENTI.Add(model);
+                }
+                _db.SaveChanges();
+
+                var user = (Session["User"] as MyCommerceDemo.Database.tuteweb);
+                user.idcliente = model.idcliente;
+                Session["User"] = user;
+
+
+
+                // Carrello in ordine
+
+                var ordine = new MyCommerceDemo.Database.datiordineclienteweb()
+                {
+                    idcliente = idCliente,
+                    cliente = ragsoc,
+                    totaleivaesclusa = cart.Sum(item => item.Key.DiscountPrice * item.Value),
+                    dataconsegnaprevista = DateTime.Parse(dataconsegna),
+                    idaziendamaster = Const.IdAziendaMaster,
+                    statoordine = "Attesa convalida",
+                    dataordine = DateTime.Now,
+                    metodoconsegna = "Ritira il cliente",
+                    descrizioneordine = ""
+                };
+                _db.datiordineclienteweb.Add(ordine);
+                _db.SaveChanges();
+
+                foreach (var item in cart)
+                {
+                    var riga = new MyCommerceDemo.Database.articoliordineclienteweb()
+                    {
+                        unitàmisura = item.Key.unitàmisura,
+                        codicearticolo = item.Key.codicearticolo,
+                        descrizionebrevearticolo = item.Key.descrizionebrevearticolo,
+                        codiceabarrearticolo = item.Key.codicearticolo,
+                        quantità = item.Value,
+                        idaziendamaster = Const.IdAziendaMaster,
+                        idlistino = item.Key.idlistino,
+                        idordine = ordine.idordine,
+                        dataordine = ordine.dataordine,
+                        idcliente = ordine.idcliente,
+                        prezzounitario = item.Key.DiscountPrice,
+                        totaleivaesclusa = item.Key.DiscountPrice * item.Value,
+                        coefk = 0
+                    };
+                    _db.articoliordineclienteweb.Add(riga);
+                }
+                _db.SaveChanges();
+
+                return RedirectToAction("Orders", "User");
+            }
+
+            return RedirectToAction("Orders", "User");
         }
 
         [HttpGet]

@@ -1,0 +1,50 @@
+﻿@model  List<MyCommerceDemo.Database.datiordineclienteweb>
+
+<!-- Start Bradcaump area -->
+<div class="ht__bradcaump__area bg-image--6">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bradcaump__inner text-center">
+                    <h2 class="bradcaump-title">IL MIEI ORDINI</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Bradcaump area -->
+<!-- cart-main-area start -->
+<div class="wishlist-area section-padding--lg bg__white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="wishlist-content">
+                    <form action="#">
+                        <div class="wishlist-table wnro__table table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th><span class="nobr">Numero</span></th>
+                                        <th><span class="nobr">Stato</span></th>
+                                        <th><span class="nobr">Data consegna</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>Ordine numero @item.idordine</td>
+                                            <td>@item.statoordine</td>
+                                            <td>@((item.dataconsegnaprevista ?? DateTime.MinValue).ToString("dd/MM/yyyy"))</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- cart-main-area end -->

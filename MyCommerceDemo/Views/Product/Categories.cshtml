@@ -1,0 +1,55 @@
+﻿@model Dictionary<MyCommerceDemo.Database.Marchegestite, int>
+
+<!-- Start Bradcaump area -->
+<div class="ht__bradcaump__area" style="background-image: url(@Url.Content("~/Content/0/banner_carrello.jpg")); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bradcaump__inner text-center">
+                    <h2 class="bradcaump-title">LE MARCHE</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Bradcaump area -->
+<div class="page-shop-sidebar left--sidebar bg--white section-padding--lg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-12 order-1 order-lg-2">
+
+                <div class="tab__container">
+                    <div class="shop-grid tab-pane fade show active" id="nav-grid" role="tabpanel">
+                        <div class="row">
+
+                            <div class="col-12">
+                                <aside class="wedget__categories poroduct--cat">
+                                    <h3 class="wedget__title">Categorie</h3>
+                                </aside>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            @foreach (var item in Model)
+                            {
+
+                                <div class="col-md-4">
+                                    <aside class="wedget__categories poroduct--cat">
+                                        <ul>
+                                            <li><a href="/Product/List?marca=@item.Key.idmarca">@item.Key.descrizionemarca <span>(@item.Value)</span></a></li>
+                                        </ul>
+                                    </aside>
+                                </div>
+
+                            }
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Shop Page -->

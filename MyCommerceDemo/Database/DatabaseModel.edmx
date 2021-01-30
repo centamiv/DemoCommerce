@@ -5,6 +5,464 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="onelightnetModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="articoliordineclienteweb">
+          <Key>
+            <PropertyRef Name="idarticolo" />
+          </Key>
+          <Property Name="idarticolo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ivavendita" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="unitàmisura" Type="varchar(max)" />
+          <Property Name="prezzofornitore" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco1pf" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco2pf" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco3pf" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco4pf" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="deltapf" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ric1pf" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzodiacquistoscontatoricaricato" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ricaricosupacq" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzounitarioazienda" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco1pa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco2pa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco3pa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco4pa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ric1pa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzounitariodivendita1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ric1pv" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzounitariodivendita2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="pesoarticolo" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="codicearticolo" Type="varchar(max)" />
+          <Property Name="descrizionebrevearticolo" Type="varchar(max)" />
+          <Property Name="codiceabarrearticolo" Type="varchar(max)" />
+          <Property Name="larghezza" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="lunghezza" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="altezza" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="unitàdimisuradim" Type="varchar(max)" />
+          <Property Name="pesototale" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sviluppomisure" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="dataoramodifica" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="statoarticolo" Type="varchar(max)" />
+          <Property Name="utente" Type="varchar(max)" />
+          <Property Name="idutente" Type="bigint" />
+          <Property Name="quantità" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="statocommessa" Type="varchar(max)" />
+          <Property Name="colore" Type="varchar(max)" />
+          <Property Name="note" Type="varchar(max)" />
+          <Property Name="idaziendamaster" Type="bigint" />
+          <Property Name="aziendamaster" Type="varchar(max)" />
+          <Property Name="selezionato" Type="bit" />
+          <Property Name="idmarca" Type="bigint" />
+          <Property Name="idlistino" Type="bigint" />
+          <Property Name="descrizionelistino" Type="varchar(max)" />
+          <Property Name="prezzolistinoaut" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="prezzolistinoman" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="descrizionemarca" Type="varchar(max)" />
+          <Property Name="ricarico2perpl" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="idordine" Type="bigint" />
+          <Property Name="nummanualeordine" Type="varchar(max)" />
+          <Property Name="dataordine" Type="datetime" />
+          <Property Name="idcliente" Type="bigint" />
+          <Property Name="cliente" Type="varchar(max)" />
+          <Property Name="prezzounitario" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="percsconto1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="percsconto2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="percsconto3" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="percsconto4" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="percricarico1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="percricarico2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="periva" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totaleivaesclusa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totaleivacompresa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="codiva" Type="varchar(max)" />
+          <Property Name="coefk" Type="decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="CLIENTI">
+          <Key>
+            <PropertyRef Name="idcliente" />
+          </Key>
+          <Property Name="denominazione" Type="varchar(max)" />
+          <Property Name="indirizzolegale" Type="varchar(max)" />
+          <Property Name="civicolegale" Type="varchar(max)" />
+          <Property Name="caplegale" Type="varchar(max)" />
+          <Property Name="comunelegale" Type="varchar(max)" />
+          <Property Name="cittàlegale" Type="varchar(max)" />
+          <Property Name="siglalegale" Type="varchar(max)" />
+          <Property Name="sottozonalegale" Type="varchar(max)" />
+          <Property Name="regionelegale" Type="varchar(max)" />
+          <Property Name="nazionelegale" Type="varchar(max)" />
+          <Property Name="telefono1legale" Type="varchar(max)" />
+          <Property Name="telefono2legale" Type="varchar(max)" />
+          <Property Name="faxlegale" Type="varchar(max)" />
+          <Property Name="gruppo" Type="varchar(max)" />
+          <Property Name="distanzalegale" Type="varchar(max)" />
+          <Property Name="internetlegale" Type="varchar(max)" />
+          <Property Name="maillegale" Type="varchar(max)" />
+          <Property Name="userid" Type="varchar(max)" />
+          <Property Name="password" Type="varchar(max)" />
+          <Property Name="PIVA" Type="varchar(max)" />
+          <Property Name="CODF" Type="varchar(max)" />
+          <Property Name="CAB" Type="varchar(max)" />
+          <Property Name="ABI" Type="varchar(max)" />
+          <Property Name="ULTVIS" Type="datetime" />
+          <Property Name="CODICEC" Type="bigint" />
+          <Property Name="NOTEVAR" Type="varchar(max)" />
+          <Property Name="CCOR" Type="varchar(max)" />
+          <Property Name="banca" Type="varchar(max)" />
+          <Property Name="bic" Type="varchar(max)" />
+          <Property Name="iban" Type="varchar(max)" />
+          <Property Name="checkdigit" Type="varchar(max)" />
+          <Property Name="cin" Type="varchar(max)" />
+          <Property Name="paese" Type="varchar(max)" />
+          <Property Name="codicedagestionale" Type="varchar" MaxLength="20" />
+          <Property Name="codiceabarre" Type="varchar(max)" />
+          <Property Name="giorniallarme1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="utente" Type="varchar(max)" />
+          <Property Name="dataprivacy" Type="datetime" />
+          <Property Name="mezzoprivacy" Type="varchar(max)" />
+          <Property Name="sco1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco3" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco4" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ric1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ric2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="pagamento" Type="varchar(max)" />
+          <Property Name="aliasazienda" Type="varchar(max)" />
+          <Property Name="fatturato" Type="varchar(max)" />
+          <Property Name="dipendenti" Type="varchar(max)" />
+          <Property Name="sensazioni" Type="varchar(max)" />
+          <Property Name="settore" Type="varchar(max)" />
+          <Property Name="contattoprincipale" Type="varchar(max)" />
+          <Property Name="fontecontatto" Type="varchar(max)" />
+          <Property Name="referenteammlegale" Type="varchar(max)" />
+          <Property Name="telrefammlegale" Type="varchar(max)" />
+          <Property Name="faxrefammlegale" Type="varchar(max)" />
+          <Property Name="mailrefammlegale" Type="varchar(max)" />
+          <Property Name="cellrefammlegale" Type="varchar(max)" />
+          <Property Name="contauno" Type="varchar(max)" />
+          <Property Name="telcontauno" Type="varchar(max)" />
+          <Property Name="celcontauno" Type="varchar(max)" />
+          <Property Name="mailcontauno" Type="varchar(max)" />
+          <Property Name="decidecontauno" Type="varchar(max)" />
+          <Property Name="mansionecontauno" Type="varchar(max)" />
+          <Property Name="contadue" Type="varchar(max)" />
+          <Property Name="telcontadue" Type="varchar(max)" />
+          <Property Name="celcontadue" Type="varchar(max)" />
+          <Property Name="mailcontadue" Type="varchar(max)" />
+          <Property Name="decidecontadue" Type="varchar(max)" />
+          <Property Name="mansionecontadue" Type="varchar(max)" />
+          <Property Name="contatre" Type="varchar(max)" />
+          <Property Name="telcontatre" Type="varchar(max)" />
+          <Property Name="celcontatre" Type="varchar(max)" />
+          <Property Name="mailcontatre" Type="varchar(max)" />
+          <Property Name="decidecontatre" Type="varchar(max)" />
+          <Property Name="mansionecontatre" Type="varchar(max)" />
+          <Property Name="contaquattro" Type="varchar(max)" />
+          <Property Name="telcontaquattro" Type="varchar(max)" />
+          <Property Name="celcontaquattro" Type="varchar(max)" />
+          <Property Name="mailcontaquattro" Type="varchar(max)" />
+          <Property Name="decidecontaquattro" Type="varchar(max)" />
+          <Property Name="mansionecontaquattro" Type="varchar(max)" />
+          <Property Name="indop1" Type="varchar(max)" />
+          <Property Name="civop1" Type="varchar(max)" />
+          <Property Name="capop1" Type="varchar(max)" />
+          <Property Name="comuneop1" Type="varchar(max)" />
+          <Property Name="cittàpo1" Type="varchar(max)" />
+          <Property Name="zonaop1" Type="varchar(max)" />
+          <Property Name="sottozonaop1" Type="varchar(max)" />
+          <Property Name="regioneop1" Type="varchar(max)" />
+          <Property Name="nazop1" Type="varchar(max)" />
+          <Property Name="telop1" Type="varchar(max)" />
+          <Property Name="faxop1" Type="varchar(max)" />
+          <Property Name="distop1" Type="varchar(max)" />
+          <Property Name="mailop1" Type="varchar(max)" />
+          <Property Name="ref1op1" Type="varchar(max)" />
+          <Property Name="telref1op1" Type="varchar(max)" />
+          <Property Name="faxref1op1" Type="varchar(max)" />
+          <Property Name="celref1op1" Type="varchar(max)" />
+          <Property Name="mailref1op1" Type="varchar(max)" />
+          <Property Name="ref2op1" Type="varchar(max)" />
+          <Property Name="telref2op1" Type="varchar(max)" />
+          <Property Name="faxref2op1" Type="varchar(max)" />
+          <Property Name="cellref2op1" Type="varchar(max)" />
+          <Property Name="mailref2op1" Type="varchar(max)" />
+          <Property Name="indop2" Type="varchar(max)" />
+          <Property Name="civop2" Type="varchar(max)" />
+          <Property Name="capop2" Type="varchar(max)" />
+          <Property Name="comuneop2" Type="varchar(max)" />
+          <Property Name="cittàop2" Type="varchar(max)" />
+          <Property Name="zonaop2" Type="varchar(max)" />
+          <Property Name="sottozonaop2" Type="varchar(max)" />
+          <Property Name="regioneop2" Type="varchar(max)" />
+          <Property Name="nazop2" Type="varchar(max)" />
+          <Property Name="telop2" Type="varchar(max)" />
+          <Property Name="faxop2" Type="varchar(max)" />
+          <Property Name="distop2" Type="varchar(max)" />
+          <Property Name="mailop2" Type="varchar(max)" />
+          <Property Name="ref1op2" Type="varchar(max)" />
+          <Property Name="telref1op2" Type="varchar(max)" />
+          <Property Name="faxref1op2" Type="varchar(max)" />
+          <Property Name="celref1op2" Type="varchar(max)" />
+          <Property Name="mailref1op2" Type="varchar(max)" />
+          <Property Name="ref2op2" Type="varchar(max)" />
+          <Property Name="telref2op2" Type="varchar(max)" />
+          <Property Name="faxref2op2" Type="varchar(max)" />
+          <Property Name="celref2op2" Type="varchar(max)" />
+          <Property Name="mailref2op2" Type="varchar(max)" />
+          <Property Name="indop3" Type="varchar(max)" />
+          <Property Name="civop3" Type="varchar(max)" />
+          <Property Name="capop3" Type="varchar(max)" />
+          <Property Name="comuneop3" Type="varchar(max)" />
+          <Property Name="cittàop3" Type="varchar(max)" />
+          <Property Name="zonaop3" Type="varchar(max)" />
+          <Property Name="sottozonaop3" Type="varchar(max)" />
+          <Property Name="regioneop3" Type="varchar(max)" />
+          <Property Name="nazioneop3" Type="varchar(max)" />
+          <Property Name="telop3" Type="varchar(max)" />
+          <Property Name="faxop3" Type="varchar(max)" />
+          <Property Name="distop3" Type="varchar(max)" />
+          <Property Name="mailop3" Type="varchar(max)" />
+          <Property Name="ref1op3" Type="varchar(max)" />
+          <Property Name="telref1op3" Type="varchar(max)" />
+          <Property Name="faxref1op3" Type="varchar(max)" />
+          <Property Name="celref1op3" Type="varchar(max)" />
+          <Property Name="mailref1op3" Type="varchar(max)" />
+          <Property Name="ref2op3" Type="varchar(max)" />
+          <Property Name="telref2op3" Type="varchar(max)" />
+          <Property Name="faxref2op3" Type="varchar(max)" />
+          <Property Name="celref2op3" Type="varchar(max)" />
+          <Property Name="mailref2op3" Type="varchar(max)" />
+          <Property Name="interesse" Type="int" />
+          <Property Name="dataoramodifica" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="dataprimareg" Type="datetime" />
+          <Property Name="socioassofrigoristi" Type="varchar(max)" />
+          <Property Name="dataiscrizione" Type="datetime" />
+          <Property Name="numiscrizione" Type="varchar(max)" />
+          <Property Name="annonuovaiscrizione" Type="varchar(max)" />
+          <Property Name="annoriniscrizione" Type="varchar(max)" />
+          <Property Name="idcliente" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="stato" Type="varchar(max)" />
+          <Property Name="invionews" Type="varchar(max)" />
+          <Property Name="clientecontatto" Type="varchar" MaxLength="20" />
+          <Property Name="dataricontatto" Type="datetime" />
+          <Property Name="motivoricontatto" Type="varchar(max)" />
+          <Property Name="contattouno" Type="varchar(max)" />
+          <Property Name="contattodue" Type="varchar(max)" />
+          <Property Name="contattotre" Type="varchar(max)" />
+          <Property Name="contattoquattro" Type="varchar(max)" />
+          <Property Name="contauno1" Type="varchar(max)" />
+          <Property Name="telcontauno1" Type="varchar(max)" />
+          <Property Name="celcontauno1" Type="varchar(max)" />
+          <Property Name="mailcontauno1" Type="varchar(max)" />
+          <Property Name="decidecontauno1" Type="varchar(max)" />
+          <Property Name="mansionecontauno1" Type="varchar(max)" />
+          <Property Name="contauno2" Type="varchar(max)" />
+          <Property Name="telcontauno2" Type="varchar(max)" />
+          <Property Name="celcontauno2" Type="varchar(max)" />
+          <Property Name="mailcontauno2" Type="varchar(max)" />
+          <Property Name="decidecontauno2" Type="varchar(max)" />
+          <Property Name="mansionecontauno2" Type="varchar(max)" />
+          <Property Name="selezionato" Type="bit" />
+          <Property Name="contauno11" Type="varchar(max)" />
+          <Property Name="telcontauno11" Type="varchar(max)" />
+          <Property Name="celcontauno11" Type="varchar(max)" />
+          <Property Name="mailcontauno11" Type="varchar(max)" />
+          <Property Name="decidecontauno11" Type="varchar(max)" />
+          <Property Name="mansionecontauno11" Type="varchar(max)" />
+          <Property Name="contauno21" Type="varchar(max)" />
+          <Property Name="telcontauno21" Type="varchar(max)" />
+          <Property Name="celcontauno21" Type="varchar(max)" />
+          <Property Name="mailcontauno21" Type="varchar(max)" />
+          <Property Name="decidecontauno21" Type="varchar(max)" />
+          <Property Name="mansionecontauno21" Type="varchar(max)" />
+          <Property Name="contauno12" Type="varchar(max)" />
+          <Property Name="telcontauno12" Type="varchar(max)" />
+          <Property Name="celcontauno12" Type="varchar(max)" />
+          <Property Name="mailcontauno12" Type="varchar(max)" />
+          <Property Name="decidecontauno12" Type="varchar(max)" />
+          <Property Name="mansionecontauno12" Type="varchar(max)" />
+          <Property Name="contauno22" Type="varchar(max)" />
+          <Property Name="telcontauno22" Type="varchar(max)" />
+          <Property Name="celcontauno22" Type="varchar(max)" />
+          <Property Name="mailcontauno22" Type="varchar(max)" />
+          <Property Name="decidecontauno22" Type="varchar(max)" />
+          <Property Name="mansionecontauno22" Type="varchar(max)" />
+          <Property Name="codiceazienda" Type="bigint" />
+          <Property Name="dataprimaregistrazione" Type="datetime" />
+          <Property Name="dataattivazionecliente" Type="datetime" />
+          <Property Name="codiceutenteassociato" Type="bigint" />
+          <Property Name="utenteassociato" Type="varchar(max)" />
+          <Property Name="tariffaoraria1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="tariffaoraria2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="tariffaoraria3" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="pec" Type="varchar(max)" />
+          <Property Name="cellag1" Type="varchar(max)" />
+          <Property Name="cellag2" Type="varchar(max)" />
+          <Property Name="cellag3" Type="varchar(max)" />
+          <Property Name="cellag4" Type="varchar(max)" />
+          <Property Name="cellag5" Type="varchar(max)" />
+          <Property Name="cellag6" Type="varchar(max)" />
+          <Property Name="cellag7" Type="varchar(max)" />
+          <Property Name="cellag8" Type="varchar(max)" />
+          <Property Name="cellag9" Type="varchar(max)" />
+          <Property Name="cellag10" Type="varchar(max)" />
+          <Property Name="faxag1" Type="varchar(max)" />
+          <Property Name="faxag2" Type="varchar(max)" />
+          <Property Name="faxag3" Type="varchar(max)" />
+          <Property Name="faxag4" Type="varchar(max)" />
+          <Property Name="faxag5" Type="varchar(max)" />
+          <Property Name="faxag6" Type="varchar(max)" />
+          <Property Name="faxag7" Type="varchar(max)" />
+          <Property Name="faxag8" Type="varchar(max)" />
+          <Property Name="faxag9" Type="varchar(max)" />
+          <Property Name="faxag10" Type="varchar(max)" />
+          <Property Name="nominativobloccato" Type="bit" />
+          <Property Name="motivoblocco" Type="varchar(max)" />
+          <Property Name="codconto" Type="varchar(max)" />
+          <Property Name="descconto" Type="varchar(max)" />
+          <Property Name="codcontropartita" Type="varchar(max)" />
+          <Property Name="desccontropartita" Type="varchar(max)" />
+          <Property Name="codivaperfatturazione" Type="varchar(max)" />
+          <Property Name="descivaperfatturazione" Type="varchar(max)" />
+          <Property Name="codbloccogenerico" Type="varchar(max)" />
+          <Property Name="descbloccogenerico" Type="varchar(max)" />
+          <Property Name="codbancapereffetti" Type="varchar(max)" />
+          <Property Name="descbancapereffetti" Type="varchar(max)" />
+          <Property Name="inviodoctramiteemail" Type="bit" />
+          <Property Name="generaautofattura" Type="bit" />
+          <Property Name="scadenzeinfattura" Type="bit" />
+          <Property Name="fattureriepilogative" Type="bit" />
+          <Property Name="accorpaarticoli" Type="bit" />
+          <Property Name="addebitabolli" Type="bit" />
+          <Property Name="addebitaspeseincasso" Type="bit" />
+          <Property Name="addebitaivasuomaggi" Type="bit" />
+          <Property Name="accorpaservizi" Type="bit" />
+          <Property Name="insospensione" Type="bit" />
+          <Property Name="stampanotearticoloservizio" Type="bit" />
+          <Property Name="codtipologiafatturazione" Type="varchar(max)" />
+          <Property Name="desctipologiafatturazione" Type="varchar(max)" />
+          <Property Name="codcondizionipagamento" Type="varchar(max)" />
+          <Property Name="desccondizionipagamento" Type="varchar(max)" />
+          <Property Name="giornofissodiscadenza" Type="int" />
+          <Property Name="forzarateinavanti" Type="bit" />
+          <Property Name="autorizzazionerid" Type="bit" />
+          <Property Name="codclientedebitore" Type="varchar(max)" />
+          <Property Name="sco1p" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco2p" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco3p" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sco4p" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="codcategoriacliente" Type="varchar(max)" />
+          <Property Name="desccategoriacliente" Type="varchar(max)" />
+          <Property Name="codlistino" Type="varchar(max)" />
+          <Property Name="desclistino" Type="varchar(max)" />
+          <Property Name="codivaesente" Type="varchar(max)" />
+          <Property Name="descivaesente" Type="varchar(max)" />
+          <Property Name="esenzionedalladata" Type="datetime" />
+          <Property Name="esenzionealladata" Type="datetime" />
+          <Property Name="clienteresidentepaesefiscalitàagevolata" Type="bit" />
+          <Property Name="nonsollecitarepagamento" Type="bit" />
+          <Property Name="codultimosollecito" Type="varchar(max)" />
+          <Property Name="descultimosollecito" Type="varchar(max)" />
+          <Property Name="codtipoultimosollecito" Type="varchar(max)" />
+          <Property Name="desctipoultimosollecito" Type="varchar(max)" />
+          <Property Name="codbloccodasollecito" Type="varchar(max)" />
+          <Property Name="descbloccodasollecito" Type="varchar(max)" />
+          <Property Name="escludidaelencoclienti" Type="bit" />
+          <Property Name="documentianchesottosoglia" Type="bit" />
+          <Property Name="consumatorefinale" Type="bit" />
+          <Property Name="soggettoareversecharge" Type="bit" />
+          <Property Name="fornitoresoggettoaritenuta" Type="bit" />
+          <Property Name="fornitoresoggettoainps" Type="bit" />
+          <Property Name="fornitoresoggettoainail" Type="bit" />
+          <Property Name="codcausalepercipiente" Type="varchar(max)" />
+          <Property Name="desccausalepercipiente" Type="varchar(max)" />
+          <Property Name="codaliquotainps" Type="varchar(max)" />
+          <Property Name="descaliquotainps" Type="varchar(max)" />
+          <Property Name="codaliquotainail" Type="varchar(max)" />
+          <Property Name="descaliquotainail" Type="varchar(max)" />
+          <Property Name="descrizioneaziendamaster" Type="varchar(max)" />
+          <Property Name="ultimosollecito" Type="varchar(max)" />
+          <Property Name="latitudine" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="longitudine" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="primomeseesclusopagcli" Type="varchar(max)" />
+          <Property Name="secondomeseesclusopagcli" Type="varchar(max)" />
+          <Property Name="giornopagamentocli" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="primomeseesclusopagfor" Type="varchar(max)" />
+          <Property Name="secondomeseesclusopagfor" Type="varchar(max)" />
+          <Property Name="giornopagamentofor" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="speseincassocli" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="speseincassofor" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="clienteprivatoazienda" Type="varchar(max)" />
+          <Property Name="codicebancaazienda" Type="varchar(max)" />
+          <Property Name="descrizionebancaazienda" Type="varchar(max)" />
+          <Property Name="numeroautorizzazione" Type="varchar(max)" />
+          <Property Name="numeroprotocollo" Type="varchar(max)" />
+          <Property Name="dataautorizzazione" Type="varchar(max)" />
+          <Property Name="dataprotocollo" Type="varchar(max)" />
+          <Property Name="vettore" Type="varchar(max)" />
+          <Property Name="codiceabbonamento" Type="varchar(max)" />
+          <Property Name="personafisica" Type="bit" />
+          <Property Name="datanascita" Type="varchar(max)" />
+          <Property Name="luogonascita" Type="varchar(max)" />
+          <Property Name="provincianascita" Type="varchar(max)" />
+          <Property Name="sesso" Type="varchar(max)" />
+          <Property Name="indirizzoresidenza" Type="varchar(max)" />
+          <Property Name="cittàresidenza" Type="varchar(max)" />
+          <Property Name="provinciaresidenza" Type="varchar(max)" />
+          <Property Name="cognome" Type="varchar(max)" />
+          <Property Name="nome" Type="varchar(max)" />
+          <Property Name="codicestatoestero" Type="varchar(max)" />
+          <Property Name="statofederatoprovcontea" Type="varchar(max)" />
+          <Property Name="localitàresidenza" Type="varchar(max)" />
+          <Property Name="indirizzoestero" Type="varchar(max)" />
+          <Property Name="notedametterenelleofferte" Type="varchar(max)" />
+          <Property Name="notedametterenegliordini" Type="varchar(max)" />
+          <Property Name="codicenazione" Type="varchar(max)" />
+          <Property Name="codicenazioneperfatturazione" Type="varchar(max)" />
+          <Property Name="codicenazionepermagazzinopredefinito" Type="varchar(max)" />
+          <Property Name="codicenazionesedeoperativa" Type="varchar(max)" />
+          <Property Name="codiceutenteassociatodue" Type="bigint" />
+          <Property Name="utenteassociatodue" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="datiordineclienteweb">
+          <Key>
+            <PropertyRef Name="idordine" />
+          </Key>
+          <Property Name="idordine" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idcliente" Type="bigint" />
+          <Property Name="cliente" Type="varchar(max)" />
+          <Property Name="notevarie" Type="varchar(max)" />
+          <Property Name="dataoramodifica" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="utente" Type="varchar(max)" />
+          <Property Name="idutente" Type="bigint" />
+          <Property Name="selezionato" Type="bit" />
+          <Property Name="perciva" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totaleiva" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totaleivaesclusa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totaleivacompresa" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totaleapagare" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="destinazionemerce" Type="varchar(max)" />
+          <Property Name="porto" Type="varchar(max)" />
+          <Property Name="allacattenzione" Type="varchar(max)" />
+          <Property Name="riferimentointerno" Type="varchar(max)" />
+          <Property Name="dataconsegnaprevista" Type="datetime" />
+          <Property Name="aziendamaster" Type="varchar(max)" />
+          <Property Name="idaziendamaster" Type="bigint" />
+          <Property Name="riferimentoazienda" Type="varchar(max)" />
+          <Property Name="statoordine" Type="varchar(max)" />
+          <Property Name="nummanualeordine" Type="varchar(max)" />
+          <Property Name="dataordine" Type="datetime" />
+          <Property Name="metodoconsegna" Type="varchar(max)" />
+          <Property Name="dataconvalida" Type="datetime" />
+          <Property Name="utenteconvalida" Type="varchar(max)" />
+          <Property Name="descrizioneordine" Type="varchar(max)" />
+          <Property Name="numordineonel" Type="varchar(max)" />
+          <Property Name="idordineonel" Type="bigint" />
+          <Property Name="dataordineonel" Type="datetime" />
+          <Property Name="statoordineonel" Type="varchar(max)" />
+          <Property Name="anomalie" Type="varchar(max)" />
+          <Property Name="dataconsegnaapprovata" Type="datetime" />
+          <Property Name="notestaff" Type="varchar(max)" />
+        </EntityType>
         <EntityType Name="listinimarche">
           <Key>
             <PropertyRef Name="idlistino" />
@@ -302,6 +760,33 @@
           <Property Name="prezzounitarioscontricmanuale" Type="decimal" Precision="18" Scale="2" />
           <Property Name="marginereale" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
+        <EntityType Name="Marchegestite">
+          <Key>
+            <PropertyRef Name="idmarca" />
+          </Key>
+          <Property Name="idmarca" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descrizionemarca" Type="varchar(max)" />
+          <Property Name="dataaggiornamento" Type="datetime" />
+          <Property Name="descrizionebreve" Type="varchar(max)" />
+          <Property Name="selezionato" Type="bit" />
+          <Property Name="idaziendamaster" Type="bigint" />
+          <Property Name="aziendamaster" Type="varchar(max)" />
+          <Property Name="utente" Type="varchar(max)" />
+          <Property Name="dataoramodifica" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="inuso" Type="varchar(max)" />
+          <Property Name="sconto1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sconto2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sconto3" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sconto4" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ricarico1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ricarico2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="note" Type="varchar(max)" />
+          <Property Name="idfornitoreassociato" Type="bigint" />
+          <Property Name="fornitoreassociato" Type="varchar(max)" />
+          <Property Name="cittàlegale" Type="varchar(max)" />
+          <Property Name="siglalegale" Type="varchar(max)" />
+          <Property Name="sottozonalegale" Type="varchar(max)" />
+        </EntityType>
         <EntityType Name="tuteweb">
           <Key>
             <PropertyRef Name="codice" />
@@ -350,8 +835,12 @@
           <Property Name="Shopoweb" Type="varchar(max)" />
         </EntityType>
         <EntityContainer Name="onelightnetModelStoreContainer">
+          <EntitySet Name="articoliordineclienteweb" EntityType="Self.articoliordineclienteweb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CLIENTI" EntityType="Self.CLIENTI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="datiordineclienteweb" EntityType="Self.datiordineclienteweb" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="listinimarche" EntityType="Self.listinimarche" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="listinoworktemp" EntityType="Self.listinoworktemp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Marchegestite" EntityType="Self.Marchegestite" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tuteweb" EntityType="Self.tuteweb" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -362,6 +851,10 @@
           <EntitySet Name="listinimarche" EntityType="onelightnetModel.listinimarche" />
           <EntitySet Name="listinoworktemp" EntityType="onelightnetModel.listinoworktemp" />
           <EntitySet Name="tuteweb" EntityType="onelightnetModel.tuteweb" />
+          <EntitySet Name="articoliordineclienteweb" EntityType="onelightnetModel.articoliordineclienteweb" />
+          <EntitySet Name="datiordineclienteweb" EntityType="onelightnetModel.datiordineclienteweb" />
+          <EntitySet Name="Marchegestite" EntityType="onelightnetModel.Marchegestite" />
+          <EntitySet Name="CLIENTI" EntityType="onelightnetModel.CLIENTI" />
         </EntityContainer>
         <EntityType Name="listinimarche">
           <Key>
@@ -706,6 +1199,491 @@
           <Property Name="Cambiastatiaccan" Type="Int64" />
           <Property Name="tipouteperdashboard" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Shopoweb" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="articoliordineclienteweb">
+          <Key>
+            <PropertyRef Name="idarticolo" />
+          </Key>
+          <Property Name="idarticolo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ivavendita" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="unitàmisura" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="prezzofornitore" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco1pf" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco2pf" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco3pf" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco4pf" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="deltapf" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ric1pf" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzodiacquistoscontatoricaricato" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ricaricosupacq" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzounitarioazienda" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco1pa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco2pa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco3pa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco4pa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ric1pa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzounitariodivendita1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ric1pv" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzounitariodivendita2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="pesoarticolo" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="codicearticolo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descrizionebrevearticolo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codiceabarrearticolo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="larghezza" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="lunghezza" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="altezza" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="unitàdimisuradim" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pesototale" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sviluppomisure" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="dataoramodifica" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="statoarticolo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="utente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idutente" Type="Int64" />
+          <Property Name="quantità" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="statocommessa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="colore" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idaziendamaster" Type="Int64" />
+          <Property Name="aziendamaster" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="selezionato" Type="Boolean" />
+          <Property Name="idmarca" Type="Int64" />
+          <Property Name="idlistino" Type="Int64" />
+          <Property Name="descrizionelistino" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="prezzolistinoaut" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prezzolistinoman" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="descrizionemarca" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ricarico2perpl" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="idordine" Type="Int64" />
+          <Property Name="nummanualeordine" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataordine" Type="DateTime" Precision="3" />
+          <Property Name="idcliente" Type="Int64" />
+          <Property Name="cliente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="prezzounitario" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="percsconto1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="percsconto2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="percsconto3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="percsconto4" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="percricarico1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="percricarico2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="periva" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totaleivaesclusa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totaleivacompresa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="codiva" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="coefk" Type="Decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="datiordineclienteweb">
+          <Key>
+            <PropertyRef Name="idordine" />
+          </Key>
+          <Property Name="idordine" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idcliente" Type="Int64" />
+          <Property Name="cliente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="notevarie" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataoramodifica" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="utente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idutente" Type="Int64" />
+          <Property Name="selezionato" Type="Boolean" />
+          <Property Name="perciva" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totaleiva" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totaleivaesclusa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totaleivacompresa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totaleapagare" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="destinazionemerce" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="porto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="allacattenzione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="riferimentointerno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataconsegnaprevista" Type="DateTime" Precision="3" />
+          <Property Name="aziendamaster" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idaziendamaster" Type="Int64" />
+          <Property Name="riferimentoazienda" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="statoordine" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nummanualeordine" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataordine" Type="DateTime" Precision="3" />
+          <Property Name="metodoconsegna" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataconvalida" Type="DateTime" Precision="3" />
+          <Property Name="utenteconvalida" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descrizioneordine" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="numordineonel" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idordineonel" Type="Int64" />
+          <Property Name="dataordineonel" Type="DateTime" Precision="3" />
+          <Property Name="statoordineonel" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="anomalie" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataconsegnaapprovata" Type="DateTime" Precision="3" />
+          <Property Name="notestaff" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Marchegestite">
+          <Key>
+            <PropertyRef Name="idmarca" />
+          </Key>
+          <Property Name="idmarca" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descrizionemarca" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataaggiornamento" Type="DateTime" Precision="3" />
+          <Property Name="descrizionebreve" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="selezionato" Type="Boolean" />
+          <Property Name="idaziendamaster" Type="Int64" />
+          <Property Name="aziendamaster" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="utente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataoramodifica" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="inuso" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sconto1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sconto2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sconto3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sconto4" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ricarico1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ricarico2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idfornitoreassociato" Type="Int64" />
+          <Property Name="fornitoreassociato" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cittàlegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="siglalegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sottozonalegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CLIENTI">
+          <Key>
+            <PropertyRef Name="idcliente" />
+          </Key>
+          <Property Name="denominazione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="indirizzolegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="civicolegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="caplegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="comunelegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cittàlegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="siglalegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sottozonalegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="regionelegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nazionelegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telefono1legale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telefono2legale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxlegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="gruppo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="distanzalegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="internetlegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="maillegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="userid" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PIVA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CODF" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CAB" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ABI" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ULTVIS" Type="DateTime" Precision="3" />
+          <Property Name="CODICEC" Type="Int64" />
+          <Property Name="NOTEVAR" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CCOR" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="banca" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="bic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="iban" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="checkdigit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cin" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="paese" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codicedagestionale" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="codiceabarre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="giorniallarme1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="utente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataprivacy" Type="DateTime" Precision="3" />
+          <Property Name="mezzoprivacy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sco1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco4" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ric1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ric2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="pagamento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="aliasazienda" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fatturato" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dipendenti" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sensazioni" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="settore" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="contattoprincipale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fontecontatto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="referenteammlegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telrefammlegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxrefammlegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailrefammlegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cellrefammlegale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="contauno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telcontauno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="celcontauno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailcontauno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="decidecontauno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mansionecontauno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="contadue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telcontadue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="celcontadue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailcontadue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="decidecontadue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mansionecontadue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="contatre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telcontatre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="celcontatre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailcontatre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="decidecontatre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mansionecontatre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="contaquattro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telcontaquattro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="celcontaquattro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailcontaquattro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="decidecontaquattro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mansionecontaquattro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="indop1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="civop1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="capop1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="comuneop1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cittàpo1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="zonaop1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sottozonaop1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="regioneop1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nazop1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telop1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxop1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="distop1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailop1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ref1op1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telref1op1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxref1op1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="celref1op1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailref1op1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ref2op1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telref2op1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxref2op1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cellref2op1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailref2op1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="indop2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="civop2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="capop2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="comuneop2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cittàop2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="zonaop2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sottozonaop2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="regioneop2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nazop2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telop2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxop2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="distop2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailop2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ref1op2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telref1op2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxref1op2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="celref1op2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailref1op2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ref2op2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telref2op2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxref2op2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="celref2op2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailref2op2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="indop3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="civop3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="capop3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="comuneop3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cittàop3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="zonaop3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sottozonaop3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="regioneop3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nazioneop3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telop3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxop3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="distop3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailop3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ref1op3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telref1op3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxref1op3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="celref1op3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailref1op3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ref2op3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telref2op3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxref2op3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="celref2op3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailref2op3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="interesse" Type="Int32" />
+          <Property Name="dataoramodifica" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="dataprimareg" Type="DateTime" Precision="3" />
+          <Property Name="socioassofrigoristi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataiscrizione" Type="DateTime" Precision="3" />
+          <Property Name="numiscrizione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="annonuovaiscrizione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="annoriniscrizione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idcliente" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="stato" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="invionews" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="clientecontatto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="dataricontatto" Type="DateTime" Precision="3" />
+          <Property Name="motivoricontatto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="contattouno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="contattodue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="contattotre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="contattoquattro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="contauno1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telcontauno1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="celcontauno1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailcontauno1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="decidecontauno1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mansionecontauno1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="contauno2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telcontauno2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="celcontauno2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailcontauno2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="decidecontauno2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mansionecontauno2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="selezionato" Type="Boolean" />
+          <Property Name="contauno11" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telcontauno11" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="celcontauno11" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailcontauno11" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="decidecontauno11" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mansionecontauno11" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="contauno21" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telcontauno21" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="celcontauno21" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailcontauno21" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="decidecontauno21" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mansionecontauno21" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="contauno12" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telcontauno12" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="celcontauno12" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailcontauno12" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="decidecontauno12" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mansionecontauno12" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="contauno22" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telcontauno22" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="celcontauno22" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mailcontauno22" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="decidecontauno22" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mansionecontauno22" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codiceazienda" Type="Int64" />
+          <Property Name="dataprimaregistrazione" Type="DateTime" Precision="3" />
+          <Property Name="dataattivazionecliente" Type="DateTime" Precision="3" />
+          <Property Name="codiceutenteassociato" Type="Int64" />
+          <Property Name="utenteassociato" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tariffaoraria1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="tariffaoraria2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="tariffaoraria3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="pec" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cellag1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cellag2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cellag3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cellag4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cellag5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cellag6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cellag7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cellag8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cellag9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cellag10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxag1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxag2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxag3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxag4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxag5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxag6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxag7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxag8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxag9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faxag10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nominativobloccato" Type="Boolean" />
+          <Property Name="motivoblocco" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codconto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descconto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codcontropartita" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="desccontropartita" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codivaperfatturazione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descivaperfatturazione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codbloccogenerico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descbloccogenerico" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codbancapereffetti" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descbancapereffetti" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="inviodoctramiteemail" Type="Boolean" />
+          <Property Name="generaautofattura" Type="Boolean" />
+          <Property Name="scadenzeinfattura" Type="Boolean" />
+          <Property Name="fattureriepilogative" Type="Boolean" />
+          <Property Name="accorpaarticoli" Type="Boolean" />
+          <Property Name="addebitabolli" Type="Boolean" />
+          <Property Name="addebitaspeseincasso" Type="Boolean" />
+          <Property Name="addebitaivasuomaggi" Type="Boolean" />
+          <Property Name="accorpaservizi" Type="Boolean" />
+          <Property Name="insospensione" Type="Boolean" />
+          <Property Name="stampanotearticoloservizio" Type="Boolean" />
+          <Property Name="codtipologiafatturazione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="desctipologiafatturazione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codcondizionipagamento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="desccondizionipagamento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="giornofissodiscadenza" Type="Int32" />
+          <Property Name="forzarateinavanti" Type="Boolean" />
+          <Property Name="autorizzazionerid" Type="Boolean" />
+          <Property Name="codclientedebitore" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sco1p" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco2p" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco3p" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sco4p" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="codcategoriacliente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="desccategoriacliente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codlistino" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="desclistino" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codivaesente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descivaesente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="esenzionedalladata" Type="DateTime" Precision="3" />
+          <Property Name="esenzionealladata" Type="DateTime" Precision="3" />
+          <Property Name="clienteresidentepaesefiscalitàagevolata" Type="Boolean" />
+          <Property Name="nonsollecitarepagamento" Type="Boolean" />
+          <Property Name="codultimosollecito" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descultimosollecito" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codtipoultimosollecito" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="desctipoultimosollecito" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codbloccodasollecito" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descbloccodasollecito" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="escludidaelencoclienti" Type="Boolean" />
+          <Property Name="documentianchesottosoglia" Type="Boolean" />
+          <Property Name="consumatorefinale" Type="Boolean" />
+          <Property Name="soggettoareversecharge" Type="Boolean" />
+          <Property Name="fornitoresoggettoaritenuta" Type="Boolean" />
+          <Property Name="fornitoresoggettoainps" Type="Boolean" />
+          <Property Name="fornitoresoggettoainail" Type="Boolean" />
+          <Property Name="codcausalepercipiente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="desccausalepercipiente" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codaliquotainps" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descaliquotainps" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codaliquotainail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descaliquotainail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descrizioneaziendamaster" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ultimosollecito" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="latitudine" Type="Decimal" Precision="18" Scale="6" />
+          <Property Name="longitudine" Type="Decimal" Precision="18" Scale="6" />
+          <Property Name="primomeseesclusopagcli" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="secondomeseesclusopagcli" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="giornopagamentocli" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="primomeseesclusopagfor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="secondomeseesclusopagfor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="giornopagamentofor" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="speseincassocli" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="speseincassofor" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="clienteprivatoazienda" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codicebancaazienda" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="descrizionebancaazienda" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="numeroautorizzazione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="numeroprotocollo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataautorizzazione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dataprotocollo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="vettore" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codiceabbonamento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="personafisica" Type="Boolean" />
+          <Property Name="datanascita" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="luogonascita" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="provincianascita" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sesso" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="indirizzoresidenza" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cittàresidenza" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="provinciaresidenza" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cognome" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codicestatoestero" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="statofederatoprovcontea" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="localitàresidenza" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="indirizzoestero" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="notedametterenelleofferte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="notedametterenegliordini" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codicenazione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codicenazioneperfatturazione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codicenazionepermagazzinopredefinito" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codicenazionesedeoperativa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codiceutenteassociatodue" Type="Int64" />
+          <Property Name="utenteassociatodue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1057,6 +2035,495 @@
                 <ScalarProperty Name="pswd" ColumnName="pswd" />
                 <ScalarProperty Name="utente" ColumnName="utente" />
                 <ScalarProperty Name="codice" ColumnName="codice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="articoliordineclienteweb">
+            <EntityTypeMapping TypeName="onelightnetModel.articoliordineclienteweb">
+              <MappingFragment StoreEntitySet="articoliordineclienteweb">
+                <ScalarProperty Name="coefk" ColumnName="coefk" />
+                <ScalarProperty Name="codiva" ColumnName="codiva" />
+                <ScalarProperty Name="totaleivacompresa" ColumnName="totaleivacompresa" />
+                <ScalarProperty Name="totaleivaesclusa" ColumnName="totaleivaesclusa" />
+                <ScalarProperty Name="periva" ColumnName="periva" />
+                <ScalarProperty Name="percricarico2" ColumnName="percricarico2" />
+                <ScalarProperty Name="percricarico1" ColumnName="percricarico1" />
+                <ScalarProperty Name="percsconto4" ColumnName="percsconto4" />
+                <ScalarProperty Name="percsconto3" ColumnName="percsconto3" />
+                <ScalarProperty Name="percsconto2" ColumnName="percsconto2" />
+                <ScalarProperty Name="percsconto1" ColumnName="percsconto1" />
+                <ScalarProperty Name="prezzounitario" ColumnName="prezzounitario" />
+                <ScalarProperty Name="cliente" ColumnName="cliente" />
+                <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+                <ScalarProperty Name="dataordine" ColumnName="dataordine" />
+                <ScalarProperty Name="nummanualeordine" ColumnName="nummanualeordine" />
+                <ScalarProperty Name="idordine" ColumnName="idordine" />
+                <ScalarProperty Name="ricarico2perpl" ColumnName="ricarico2perpl" />
+                <ScalarProperty Name="descrizionemarca" ColumnName="descrizionemarca" />
+                <ScalarProperty Name="prezzolistinoman" ColumnName="prezzolistinoman" />
+                <ScalarProperty Name="prezzolistinoaut" ColumnName="prezzolistinoaut" />
+                <ScalarProperty Name="descrizionelistino" ColumnName="descrizionelistino" />
+                <ScalarProperty Name="idlistino" ColumnName="idlistino" />
+                <ScalarProperty Name="idmarca" ColumnName="idmarca" />
+                <ScalarProperty Name="selezionato" ColumnName="selezionato" />
+                <ScalarProperty Name="aziendamaster" ColumnName="aziendamaster" />
+                <ScalarProperty Name="idaziendamaster" ColumnName="idaziendamaster" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="colore" ColumnName="colore" />
+                <ScalarProperty Name="statocommessa" ColumnName="statocommessa" />
+                <ScalarProperty Name="quantità" ColumnName="quantità" />
+                <ScalarProperty Name="idutente" ColumnName="idutente" />
+                <ScalarProperty Name="utente" ColumnName="utente" />
+                <ScalarProperty Name="statoarticolo" ColumnName="statoarticolo" />
+                <ScalarProperty Name="dataoramodifica" ColumnName="dataoramodifica" />
+                <ScalarProperty Name="sviluppomisure" ColumnName="sviluppomisure" />
+                <ScalarProperty Name="pesototale" ColumnName="pesototale" />
+                <ScalarProperty Name="unitàdimisuradim" ColumnName="unitàdimisuradim" />
+                <ScalarProperty Name="altezza" ColumnName="altezza" />
+                <ScalarProperty Name="lunghezza" ColumnName="lunghezza" />
+                <ScalarProperty Name="larghezza" ColumnName="larghezza" />
+                <ScalarProperty Name="codiceabarrearticolo" ColumnName="codiceabarrearticolo" />
+                <ScalarProperty Name="descrizionebrevearticolo" ColumnName="descrizionebrevearticolo" />
+                <ScalarProperty Name="codicearticolo" ColumnName="codicearticolo" />
+                <ScalarProperty Name="pesoarticolo" ColumnName="pesoarticolo" />
+                <ScalarProperty Name="prezzounitariodivendita2" ColumnName="prezzounitariodivendita2" />
+                <ScalarProperty Name="ric1pv" ColumnName="ric1pv" />
+                <ScalarProperty Name="prezzounitariodivendita1" ColumnName="prezzounitariodivendita1" />
+                <ScalarProperty Name="ric1pa" ColumnName="ric1pa" />
+                <ScalarProperty Name="sco4pa" ColumnName="sco4pa" />
+                <ScalarProperty Name="sco3pa" ColumnName="sco3pa" />
+                <ScalarProperty Name="sco2pa" ColumnName="sco2pa" />
+                <ScalarProperty Name="sco1pa" ColumnName="sco1pa" />
+                <ScalarProperty Name="prezzounitarioazienda" ColumnName="prezzounitarioazienda" />
+                <ScalarProperty Name="ricaricosupacq" ColumnName="ricaricosupacq" />
+                <ScalarProperty Name="prezzodiacquistoscontatoricaricato" ColumnName="prezzodiacquistoscontatoricaricato" />
+                <ScalarProperty Name="ric1pf" ColumnName="ric1pf" />
+                <ScalarProperty Name="deltapf" ColumnName="deltapf" />
+                <ScalarProperty Name="sco4pf" ColumnName="sco4pf" />
+                <ScalarProperty Name="sco3pf" ColumnName="sco3pf" />
+                <ScalarProperty Name="sco2pf" ColumnName="sco2pf" />
+                <ScalarProperty Name="sco1pf" ColumnName="sco1pf" />
+                <ScalarProperty Name="prezzofornitore" ColumnName="prezzofornitore" />
+                <ScalarProperty Name="unitàmisura" ColumnName="unitàmisura" />
+                <ScalarProperty Name="ivavendita" ColumnName="ivavendita" />
+                <ScalarProperty Name="idarticolo" ColumnName="idarticolo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="datiordineclienteweb">
+            <EntityTypeMapping TypeName="onelightnetModel.datiordineclienteweb">
+              <MappingFragment StoreEntitySet="datiordineclienteweb">
+                <ScalarProperty Name="notestaff" ColumnName="notestaff" />
+                <ScalarProperty Name="dataconsegnaapprovata" ColumnName="dataconsegnaapprovata" />
+                <ScalarProperty Name="anomalie" ColumnName="anomalie" />
+                <ScalarProperty Name="statoordineonel" ColumnName="statoordineonel" />
+                <ScalarProperty Name="dataordineonel" ColumnName="dataordineonel" />
+                <ScalarProperty Name="idordineonel" ColumnName="idordineonel" />
+                <ScalarProperty Name="numordineonel" ColumnName="numordineonel" />
+                <ScalarProperty Name="descrizioneordine" ColumnName="descrizioneordine" />
+                <ScalarProperty Name="utenteconvalida" ColumnName="utenteconvalida" />
+                <ScalarProperty Name="dataconvalida" ColumnName="dataconvalida" />
+                <ScalarProperty Name="metodoconsegna" ColumnName="metodoconsegna" />
+                <ScalarProperty Name="dataordine" ColumnName="dataordine" />
+                <ScalarProperty Name="nummanualeordine" ColumnName="nummanualeordine" />
+                <ScalarProperty Name="statoordine" ColumnName="statoordine" />
+                <ScalarProperty Name="riferimentoazienda" ColumnName="riferimentoazienda" />
+                <ScalarProperty Name="idaziendamaster" ColumnName="idaziendamaster" />
+                <ScalarProperty Name="aziendamaster" ColumnName="aziendamaster" />
+                <ScalarProperty Name="dataconsegnaprevista" ColumnName="dataconsegnaprevista" />
+                <ScalarProperty Name="riferimentointerno" ColumnName="riferimentointerno" />
+                <ScalarProperty Name="allacattenzione" ColumnName="allacattenzione" />
+                <ScalarProperty Name="porto" ColumnName="porto" />
+                <ScalarProperty Name="destinazionemerce" ColumnName="destinazionemerce" />
+                <ScalarProperty Name="totaleapagare" ColumnName="totaleapagare" />
+                <ScalarProperty Name="totaleivacompresa" ColumnName="totaleivacompresa" />
+                <ScalarProperty Name="totaleivaesclusa" ColumnName="totaleivaesclusa" />
+                <ScalarProperty Name="totaleiva" ColumnName="totaleiva" />
+                <ScalarProperty Name="perciva" ColumnName="perciva" />
+                <ScalarProperty Name="selezionato" ColumnName="selezionato" />
+                <ScalarProperty Name="idutente" ColumnName="idutente" />
+                <ScalarProperty Name="utente" ColumnName="utente" />
+                <ScalarProperty Name="dataoramodifica" ColumnName="dataoramodifica" />
+                <ScalarProperty Name="notevarie" ColumnName="notevarie" />
+                <ScalarProperty Name="cliente" ColumnName="cliente" />
+                <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+                <ScalarProperty Name="idordine" ColumnName="idordine" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Marchegestite">
+            <EntityTypeMapping TypeName="onelightnetModel.Marchegestite">
+              <MappingFragment StoreEntitySet="Marchegestite">
+                <ScalarProperty Name="sottozonalegale" ColumnName="sottozonalegale" />
+                <ScalarProperty Name="siglalegale" ColumnName="siglalegale" />
+                <ScalarProperty Name="cittàlegale" ColumnName="cittàlegale" />
+                <ScalarProperty Name="fornitoreassociato" ColumnName="fornitoreassociato" />
+                <ScalarProperty Name="idfornitoreassociato" ColumnName="idfornitoreassociato" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="ricarico2" ColumnName="ricarico2" />
+                <ScalarProperty Name="ricarico1" ColumnName="ricarico1" />
+                <ScalarProperty Name="sconto4" ColumnName="sconto4" />
+                <ScalarProperty Name="sconto3" ColumnName="sconto3" />
+                <ScalarProperty Name="sconto2" ColumnName="sconto2" />
+                <ScalarProperty Name="sconto1" ColumnName="sconto1" />
+                <ScalarProperty Name="inuso" ColumnName="inuso" />
+                <ScalarProperty Name="dataoramodifica" ColumnName="dataoramodifica" />
+                <ScalarProperty Name="utente" ColumnName="utente" />
+                <ScalarProperty Name="aziendamaster" ColumnName="aziendamaster" />
+                <ScalarProperty Name="idaziendamaster" ColumnName="idaziendamaster" />
+                <ScalarProperty Name="selezionato" ColumnName="selezionato" />
+                <ScalarProperty Name="descrizionebreve" ColumnName="descrizionebreve" />
+                <ScalarProperty Name="dataaggiornamento" ColumnName="dataaggiornamento" />
+                <ScalarProperty Name="descrizionemarca" ColumnName="descrizionemarca" />
+                <ScalarProperty Name="idmarca" ColumnName="idmarca" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLIENTI">
+            <EntityTypeMapping TypeName="onelightnetModel.CLIENTI">
+              <MappingFragment StoreEntitySet="CLIENTI">
+                <ScalarProperty Name="utenteassociatodue" ColumnName="utenteassociatodue" />
+                <ScalarProperty Name="codiceutenteassociatodue" ColumnName="codiceutenteassociatodue" />
+                <ScalarProperty Name="codicenazionesedeoperativa" ColumnName="codicenazionesedeoperativa" />
+                <ScalarProperty Name="codicenazionepermagazzinopredefinito" ColumnName="codicenazionepermagazzinopredefinito" />
+                <ScalarProperty Name="codicenazioneperfatturazione" ColumnName="codicenazioneperfatturazione" />
+                <ScalarProperty Name="codicenazione" ColumnName="codicenazione" />
+                <ScalarProperty Name="notedametterenegliordini" ColumnName="notedametterenegliordini" />
+                <ScalarProperty Name="notedametterenelleofferte" ColumnName="notedametterenelleofferte" />
+                <ScalarProperty Name="indirizzoestero" ColumnName="indirizzoestero" />
+                <ScalarProperty Name="localitàresidenza" ColumnName="localitàresidenza" />
+                <ScalarProperty Name="statofederatoprovcontea" ColumnName="statofederatoprovcontea" />
+                <ScalarProperty Name="codicestatoestero" ColumnName="codicestatoestero" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="cognome" ColumnName="cognome" />
+                <ScalarProperty Name="provinciaresidenza" ColumnName="provinciaresidenza" />
+                <ScalarProperty Name="cittàresidenza" ColumnName="cittàresidenza" />
+                <ScalarProperty Name="indirizzoresidenza" ColumnName="indirizzoresidenza" />
+                <ScalarProperty Name="sesso" ColumnName="sesso" />
+                <ScalarProperty Name="provincianascita" ColumnName="provincianascita" />
+                <ScalarProperty Name="luogonascita" ColumnName="luogonascita" />
+                <ScalarProperty Name="datanascita" ColumnName="datanascita" />
+                <ScalarProperty Name="personafisica" ColumnName="personafisica" />
+                <ScalarProperty Name="codiceabbonamento" ColumnName="codiceabbonamento" />
+                <ScalarProperty Name="vettore" ColumnName="vettore" />
+                <ScalarProperty Name="dataprotocollo" ColumnName="dataprotocollo" />
+                <ScalarProperty Name="dataautorizzazione" ColumnName="dataautorizzazione" />
+                <ScalarProperty Name="numeroprotocollo" ColumnName="numeroprotocollo" />
+                <ScalarProperty Name="numeroautorizzazione" ColumnName="numeroautorizzazione" />
+                <ScalarProperty Name="descrizionebancaazienda" ColumnName="descrizionebancaazienda" />
+                <ScalarProperty Name="codicebancaazienda" ColumnName="codicebancaazienda" />
+                <ScalarProperty Name="clienteprivatoazienda" ColumnName="clienteprivatoazienda" />
+                <ScalarProperty Name="speseincassofor" ColumnName="speseincassofor" />
+                <ScalarProperty Name="speseincassocli" ColumnName="speseincassocli" />
+                <ScalarProperty Name="giornopagamentofor" ColumnName="giornopagamentofor" />
+                <ScalarProperty Name="secondomeseesclusopagfor" ColumnName="secondomeseesclusopagfor" />
+                <ScalarProperty Name="primomeseesclusopagfor" ColumnName="primomeseesclusopagfor" />
+                <ScalarProperty Name="giornopagamentocli" ColumnName="giornopagamentocli" />
+                <ScalarProperty Name="secondomeseesclusopagcli" ColumnName="secondomeseesclusopagcli" />
+                <ScalarProperty Name="primomeseesclusopagcli" ColumnName="primomeseesclusopagcli" />
+                <ScalarProperty Name="longitudine" ColumnName="longitudine" />
+                <ScalarProperty Name="latitudine" ColumnName="latitudine" />
+                <ScalarProperty Name="ultimosollecito" ColumnName="ultimosollecito" />
+                <ScalarProperty Name="descrizioneaziendamaster" ColumnName="descrizioneaziendamaster" />
+                <ScalarProperty Name="descaliquotainail" ColumnName="descaliquotainail" />
+                <ScalarProperty Name="codaliquotainail" ColumnName="codaliquotainail" />
+                <ScalarProperty Name="descaliquotainps" ColumnName="descaliquotainps" />
+                <ScalarProperty Name="codaliquotainps" ColumnName="codaliquotainps" />
+                <ScalarProperty Name="desccausalepercipiente" ColumnName="desccausalepercipiente" />
+                <ScalarProperty Name="codcausalepercipiente" ColumnName="codcausalepercipiente" />
+                <ScalarProperty Name="fornitoresoggettoainail" ColumnName="fornitoresoggettoainail" />
+                <ScalarProperty Name="fornitoresoggettoainps" ColumnName="fornitoresoggettoainps" />
+                <ScalarProperty Name="fornitoresoggettoaritenuta" ColumnName="fornitoresoggettoaritenuta" />
+                <ScalarProperty Name="soggettoareversecharge" ColumnName="soggettoareversecharge" />
+                <ScalarProperty Name="consumatorefinale" ColumnName="consumatorefinale" />
+                <ScalarProperty Name="documentianchesottosoglia" ColumnName="documentianchesottosoglia" />
+                <ScalarProperty Name="escludidaelencoclienti" ColumnName="escludidaelencoclienti" />
+                <ScalarProperty Name="descbloccodasollecito" ColumnName="descbloccodasollecito" />
+                <ScalarProperty Name="codbloccodasollecito" ColumnName="codbloccodasollecito" />
+                <ScalarProperty Name="desctipoultimosollecito" ColumnName="desctipoultimosollecito" />
+                <ScalarProperty Name="codtipoultimosollecito" ColumnName="codtipoultimosollecito" />
+                <ScalarProperty Name="descultimosollecito" ColumnName="descultimosollecito" />
+                <ScalarProperty Name="codultimosollecito" ColumnName="codultimosollecito" />
+                <ScalarProperty Name="nonsollecitarepagamento" ColumnName="nonsollecitarepagamento" />
+                <ScalarProperty Name="clienteresidentepaesefiscalitàagevolata" ColumnName="clienteresidentepaesefiscalitàagevolata" />
+                <ScalarProperty Name="esenzionealladata" ColumnName="esenzionealladata" />
+                <ScalarProperty Name="esenzionedalladata" ColumnName="esenzionedalladata" />
+                <ScalarProperty Name="descivaesente" ColumnName="descivaesente" />
+                <ScalarProperty Name="codivaesente" ColumnName="codivaesente" />
+                <ScalarProperty Name="desclistino" ColumnName="desclistino" />
+                <ScalarProperty Name="codlistino" ColumnName="codlistino" />
+                <ScalarProperty Name="desccategoriacliente" ColumnName="desccategoriacliente" />
+                <ScalarProperty Name="codcategoriacliente" ColumnName="codcategoriacliente" />
+                <ScalarProperty Name="sco4p" ColumnName="sco4p" />
+                <ScalarProperty Name="sco3p" ColumnName="sco3p" />
+                <ScalarProperty Name="sco2p" ColumnName="sco2p" />
+                <ScalarProperty Name="sco1p" ColumnName="sco1p" />
+                <ScalarProperty Name="codclientedebitore" ColumnName="codclientedebitore" />
+                <ScalarProperty Name="autorizzazionerid" ColumnName="autorizzazionerid" />
+                <ScalarProperty Name="forzarateinavanti" ColumnName="forzarateinavanti" />
+                <ScalarProperty Name="giornofissodiscadenza" ColumnName="giornofissodiscadenza" />
+                <ScalarProperty Name="desccondizionipagamento" ColumnName="desccondizionipagamento" />
+                <ScalarProperty Name="codcondizionipagamento" ColumnName="codcondizionipagamento" />
+                <ScalarProperty Name="desctipologiafatturazione" ColumnName="desctipologiafatturazione" />
+                <ScalarProperty Name="codtipologiafatturazione" ColumnName="codtipologiafatturazione" />
+                <ScalarProperty Name="stampanotearticoloservizio" ColumnName="stampanotearticoloservizio" />
+                <ScalarProperty Name="insospensione" ColumnName="insospensione" />
+                <ScalarProperty Name="accorpaservizi" ColumnName="accorpaservizi" />
+                <ScalarProperty Name="addebitaivasuomaggi" ColumnName="addebitaivasuomaggi" />
+                <ScalarProperty Name="addebitaspeseincasso" ColumnName="addebitaspeseincasso" />
+                <ScalarProperty Name="addebitabolli" ColumnName="addebitabolli" />
+                <ScalarProperty Name="accorpaarticoli" ColumnName="accorpaarticoli" />
+                <ScalarProperty Name="fattureriepilogative" ColumnName="fattureriepilogative" />
+                <ScalarProperty Name="scadenzeinfattura" ColumnName="scadenzeinfattura" />
+                <ScalarProperty Name="generaautofattura" ColumnName="generaautofattura" />
+                <ScalarProperty Name="inviodoctramiteemail" ColumnName="inviodoctramiteemail" />
+                <ScalarProperty Name="descbancapereffetti" ColumnName="descbancapereffetti" />
+                <ScalarProperty Name="codbancapereffetti" ColumnName="codbancapereffetti" />
+                <ScalarProperty Name="descbloccogenerico" ColumnName="descbloccogenerico" />
+                <ScalarProperty Name="codbloccogenerico" ColumnName="codbloccogenerico" />
+                <ScalarProperty Name="descivaperfatturazione" ColumnName="descivaperfatturazione" />
+                <ScalarProperty Name="codivaperfatturazione" ColumnName="codivaperfatturazione" />
+                <ScalarProperty Name="desccontropartita" ColumnName="desccontropartita" />
+                <ScalarProperty Name="codcontropartita" ColumnName="codcontropartita" />
+                <ScalarProperty Name="descconto" ColumnName="descconto" />
+                <ScalarProperty Name="codconto" ColumnName="codconto" />
+                <ScalarProperty Name="motivoblocco" ColumnName="motivoblocco" />
+                <ScalarProperty Name="nominativobloccato" ColumnName="nominativobloccato" />
+                <ScalarProperty Name="faxag10" ColumnName="faxag10" />
+                <ScalarProperty Name="faxag9" ColumnName="faxag9" />
+                <ScalarProperty Name="faxag8" ColumnName="faxag8" />
+                <ScalarProperty Name="faxag7" ColumnName="faxag7" />
+                <ScalarProperty Name="faxag6" ColumnName="faxag6" />
+                <ScalarProperty Name="faxag5" ColumnName="faxag5" />
+                <ScalarProperty Name="faxag4" ColumnName="faxag4" />
+                <ScalarProperty Name="faxag3" ColumnName="faxag3" />
+                <ScalarProperty Name="faxag2" ColumnName="faxag2" />
+                <ScalarProperty Name="faxag1" ColumnName="faxag1" />
+                <ScalarProperty Name="cellag10" ColumnName="cellag10" />
+                <ScalarProperty Name="cellag9" ColumnName="cellag9" />
+                <ScalarProperty Name="cellag8" ColumnName="cellag8" />
+                <ScalarProperty Name="cellag7" ColumnName="cellag7" />
+                <ScalarProperty Name="cellag6" ColumnName="cellag6" />
+                <ScalarProperty Name="cellag5" ColumnName="cellag5" />
+                <ScalarProperty Name="cellag4" ColumnName="cellag4" />
+                <ScalarProperty Name="cellag3" ColumnName="cellag3" />
+                <ScalarProperty Name="cellag2" ColumnName="cellag2" />
+                <ScalarProperty Name="cellag1" ColumnName="cellag1" />
+                <ScalarProperty Name="pec" ColumnName="pec" />
+                <ScalarProperty Name="tariffaoraria3" ColumnName="tariffaoraria3" />
+                <ScalarProperty Name="tariffaoraria2" ColumnName="tariffaoraria2" />
+                <ScalarProperty Name="tariffaoraria1" ColumnName="tariffaoraria1" />
+                <ScalarProperty Name="utenteassociato" ColumnName="utenteassociato" />
+                <ScalarProperty Name="codiceutenteassociato" ColumnName="codiceutenteassociato" />
+                <ScalarProperty Name="dataattivazionecliente" ColumnName="dataattivazionecliente" />
+                <ScalarProperty Name="dataprimaregistrazione" ColumnName="dataprimaregistrazione" />
+                <ScalarProperty Name="codiceazienda" ColumnName="codiceazienda" />
+                <ScalarProperty Name="mansionecontauno22" ColumnName="mansionecontauno22" />
+                <ScalarProperty Name="decidecontauno22" ColumnName="decidecontauno22" />
+                <ScalarProperty Name="mailcontauno22" ColumnName="mailcontauno22" />
+                <ScalarProperty Name="celcontauno22" ColumnName="celcontauno22" />
+                <ScalarProperty Name="telcontauno22" ColumnName="telcontauno22" />
+                <ScalarProperty Name="contauno22" ColumnName="contauno22" />
+                <ScalarProperty Name="mansionecontauno12" ColumnName="mansionecontauno12" />
+                <ScalarProperty Name="decidecontauno12" ColumnName="decidecontauno12" />
+                <ScalarProperty Name="mailcontauno12" ColumnName="mailcontauno12" />
+                <ScalarProperty Name="celcontauno12" ColumnName="celcontauno12" />
+                <ScalarProperty Name="telcontauno12" ColumnName="telcontauno12" />
+                <ScalarProperty Name="contauno12" ColumnName="contauno12" />
+                <ScalarProperty Name="mansionecontauno21" ColumnName="mansionecontauno21" />
+                <ScalarProperty Name="decidecontauno21" ColumnName="decidecontauno21" />
+                <ScalarProperty Name="mailcontauno21" ColumnName="mailcontauno21" />
+                <ScalarProperty Name="celcontauno21" ColumnName="celcontauno21" />
+                <ScalarProperty Name="telcontauno21" ColumnName="telcontauno21" />
+                <ScalarProperty Name="contauno21" ColumnName="contauno21" />
+                <ScalarProperty Name="mansionecontauno11" ColumnName="mansionecontauno11" />
+                <ScalarProperty Name="decidecontauno11" ColumnName="decidecontauno11" />
+                <ScalarProperty Name="mailcontauno11" ColumnName="mailcontauno11" />
+                <ScalarProperty Name="celcontauno11" ColumnName="celcontauno11" />
+                <ScalarProperty Name="telcontauno11" ColumnName="telcontauno11" />
+                <ScalarProperty Name="contauno11" ColumnName="contauno11" />
+                <ScalarProperty Name="selezionato" ColumnName="selezionato" />
+                <ScalarProperty Name="mansionecontauno2" ColumnName="mansionecontauno2" />
+                <ScalarProperty Name="decidecontauno2" ColumnName="decidecontauno2" />
+                <ScalarProperty Name="mailcontauno2" ColumnName="mailcontauno2" />
+                <ScalarProperty Name="celcontauno2" ColumnName="celcontauno2" />
+                <ScalarProperty Name="telcontauno2" ColumnName="telcontauno2" />
+                <ScalarProperty Name="contauno2" ColumnName="contauno2" />
+                <ScalarProperty Name="mansionecontauno1" ColumnName="mansionecontauno1" />
+                <ScalarProperty Name="decidecontauno1" ColumnName="decidecontauno1" />
+                <ScalarProperty Name="mailcontauno1" ColumnName="mailcontauno1" />
+                <ScalarProperty Name="celcontauno1" ColumnName="celcontauno1" />
+                <ScalarProperty Name="telcontauno1" ColumnName="telcontauno1" />
+                <ScalarProperty Name="contauno1" ColumnName="contauno1" />
+                <ScalarProperty Name="contattoquattro" ColumnName="contattoquattro" />
+                <ScalarProperty Name="contattotre" ColumnName="contattotre" />
+                <ScalarProperty Name="contattodue" ColumnName="contattodue" />
+                <ScalarProperty Name="contattouno" ColumnName="contattouno" />
+                <ScalarProperty Name="motivoricontatto" ColumnName="motivoricontatto" />
+                <ScalarProperty Name="dataricontatto" ColumnName="dataricontatto" />
+                <ScalarProperty Name="clientecontatto" ColumnName="clientecontatto" />
+                <ScalarProperty Name="invionews" ColumnName="invionews" />
+                <ScalarProperty Name="stato" ColumnName="stato" />
+                <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+                <ScalarProperty Name="annoriniscrizione" ColumnName="annoriniscrizione" />
+                <ScalarProperty Name="annonuovaiscrizione" ColumnName="annonuovaiscrizione" />
+                <ScalarProperty Name="numiscrizione" ColumnName="numiscrizione" />
+                <ScalarProperty Name="dataiscrizione" ColumnName="dataiscrizione" />
+                <ScalarProperty Name="socioassofrigoristi" ColumnName="socioassofrigoristi" />
+                <ScalarProperty Name="dataprimareg" ColumnName="dataprimareg" />
+                <ScalarProperty Name="dataoramodifica" ColumnName="dataoramodifica" />
+                <ScalarProperty Name="interesse" ColumnName="interesse" />
+                <ScalarProperty Name="mailref2op3" ColumnName="mailref2op3" />
+                <ScalarProperty Name="celref2op3" ColumnName="celref2op3" />
+                <ScalarProperty Name="faxref2op3" ColumnName="faxref2op3" />
+                <ScalarProperty Name="telref2op3" ColumnName="telref2op3" />
+                <ScalarProperty Name="ref2op3" ColumnName="ref2op3" />
+                <ScalarProperty Name="mailref1op3" ColumnName="mailref1op3" />
+                <ScalarProperty Name="celref1op3" ColumnName="celref1op3" />
+                <ScalarProperty Name="faxref1op3" ColumnName="faxref1op3" />
+                <ScalarProperty Name="telref1op3" ColumnName="telref1op3" />
+                <ScalarProperty Name="ref1op3" ColumnName="ref1op3" />
+                <ScalarProperty Name="mailop3" ColumnName="mailop3" />
+                <ScalarProperty Name="distop3" ColumnName="distop3" />
+                <ScalarProperty Name="faxop3" ColumnName="faxop3" />
+                <ScalarProperty Name="telop3" ColumnName="telop3" />
+                <ScalarProperty Name="nazioneop3" ColumnName="nazioneop3" />
+                <ScalarProperty Name="regioneop3" ColumnName="regioneop3" />
+                <ScalarProperty Name="sottozonaop3" ColumnName="sottozonaop3" />
+                <ScalarProperty Name="zonaop3" ColumnName="zonaop3" />
+                <ScalarProperty Name="cittàop3" ColumnName="cittàop3" />
+                <ScalarProperty Name="comuneop3" ColumnName="comuneop3" />
+                <ScalarProperty Name="capop3" ColumnName="capop3" />
+                <ScalarProperty Name="civop3" ColumnName="civop3" />
+                <ScalarProperty Name="indop3" ColumnName="indop3" />
+                <ScalarProperty Name="mailref2op2" ColumnName="mailref2op2" />
+                <ScalarProperty Name="celref2op2" ColumnName="celref2op2" />
+                <ScalarProperty Name="faxref2op2" ColumnName="faxref2op2" />
+                <ScalarProperty Name="telref2op2" ColumnName="telref2op2" />
+                <ScalarProperty Name="ref2op2" ColumnName="ref2op2" />
+                <ScalarProperty Name="mailref1op2" ColumnName="mailref1op2" />
+                <ScalarProperty Name="celref1op2" ColumnName="celref1op2" />
+                <ScalarProperty Name="faxref1op2" ColumnName="faxref1op2" />
+                <ScalarProperty Name="telref1op2" ColumnName="telref1op2" />
+                <ScalarProperty Name="ref1op2" ColumnName="ref1op2" />
+                <ScalarProperty Name="mailop2" ColumnName="mailop2" />
+                <ScalarProperty Name="distop2" ColumnName="distop2" />
+                <ScalarProperty Name="faxop2" ColumnName="faxop2" />
+                <ScalarProperty Name="telop2" ColumnName="telop2" />
+                <ScalarProperty Name="nazop2" ColumnName="nazop2" />
+                <ScalarProperty Name="regioneop2" ColumnName="regioneop2" />
+                <ScalarProperty Name="sottozonaop2" ColumnName="sottozonaop2" />
+                <ScalarProperty Name="zonaop2" ColumnName="zonaop2" />
+                <ScalarProperty Name="cittàop2" ColumnName="cittàop2" />
+                <ScalarProperty Name="comuneop2" ColumnName="comuneop2" />
+                <ScalarProperty Name="capop2" ColumnName="capop2" />
+                <ScalarProperty Name="civop2" ColumnName="civop2" />
+                <ScalarProperty Name="indop2" ColumnName="indop2" />
+                <ScalarProperty Name="mailref2op1" ColumnName="mailref2op1" />
+                <ScalarProperty Name="cellref2op1" ColumnName="cellref2op1" />
+                <ScalarProperty Name="faxref2op1" ColumnName="faxref2op1" />
+                <ScalarProperty Name="telref2op1" ColumnName="telref2op1" />
+                <ScalarProperty Name="ref2op1" ColumnName="ref2op1" />
+                <ScalarProperty Name="mailref1op1" ColumnName="mailref1op1" />
+                <ScalarProperty Name="celref1op1" ColumnName="celref1op1" />
+                <ScalarProperty Name="faxref1op1" ColumnName="faxref1op1" />
+                <ScalarProperty Name="telref1op1" ColumnName="telref1op1" />
+                <ScalarProperty Name="ref1op1" ColumnName="ref1op1" />
+                <ScalarProperty Name="mailop1" ColumnName="mailop1" />
+                <ScalarProperty Name="distop1" ColumnName="distop1" />
+                <ScalarProperty Name="faxop1" ColumnName="faxop1" />
+                <ScalarProperty Name="telop1" ColumnName="telop1" />
+                <ScalarProperty Name="nazop1" ColumnName="nazop1" />
+                <ScalarProperty Name="regioneop1" ColumnName="regioneop1" />
+                <ScalarProperty Name="sottozonaop1" ColumnName="sottozonaop1" />
+                <ScalarProperty Name="zonaop1" ColumnName="zonaop1" />
+                <ScalarProperty Name="cittàpo1" ColumnName="cittàpo1" />
+                <ScalarProperty Name="comuneop1" ColumnName="comuneop1" />
+                <ScalarProperty Name="capop1" ColumnName="capop1" />
+                <ScalarProperty Name="civop1" ColumnName="civop1" />
+                <ScalarProperty Name="indop1" ColumnName="indop1" />
+                <ScalarProperty Name="mansionecontaquattro" ColumnName="mansionecontaquattro" />
+                <ScalarProperty Name="decidecontaquattro" ColumnName="decidecontaquattro" />
+                <ScalarProperty Name="mailcontaquattro" ColumnName="mailcontaquattro" />
+                <ScalarProperty Name="celcontaquattro" ColumnName="celcontaquattro" />
+                <ScalarProperty Name="telcontaquattro" ColumnName="telcontaquattro" />
+                <ScalarProperty Name="contaquattro" ColumnName="contaquattro" />
+                <ScalarProperty Name="mansionecontatre" ColumnName="mansionecontatre" />
+                <ScalarProperty Name="decidecontatre" ColumnName="decidecontatre" />
+                <ScalarProperty Name="mailcontatre" ColumnName="mailcontatre" />
+                <ScalarProperty Name="celcontatre" ColumnName="celcontatre" />
+                <ScalarProperty Name="telcontatre" ColumnName="telcontatre" />
+                <ScalarProperty Name="contatre" ColumnName="contatre" />
+                <ScalarProperty Name="mansionecontadue" ColumnName="mansionecontadue" />
+                <ScalarProperty Name="decidecontadue" ColumnName="decidecontadue" />
+                <ScalarProperty Name="mailcontadue" ColumnName="mailcontadue" />
+                <ScalarProperty Name="celcontadue" ColumnName="celcontadue" />
+                <ScalarProperty Name="telcontadue" ColumnName="telcontadue" />
+                <ScalarProperty Name="contadue" ColumnName="contadue" />
+                <ScalarProperty Name="mansionecontauno" ColumnName="mansionecontauno" />
+                <ScalarProperty Name="decidecontauno" ColumnName="decidecontauno" />
+                <ScalarProperty Name="mailcontauno" ColumnName="mailcontauno" />
+                <ScalarProperty Name="celcontauno" ColumnName="celcontauno" />
+                <ScalarProperty Name="telcontauno" ColumnName="telcontauno" />
+                <ScalarProperty Name="contauno" ColumnName="contauno" />
+                <ScalarProperty Name="cellrefammlegale" ColumnName="cellrefammlegale" />
+                <ScalarProperty Name="mailrefammlegale" ColumnName="mailrefammlegale" />
+                <ScalarProperty Name="faxrefammlegale" ColumnName="faxrefammlegale" />
+                <ScalarProperty Name="telrefammlegale" ColumnName="telrefammlegale" />
+                <ScalarProperty Name="referenteammlegale" ColumnName="referenteammlegale" />
+                <ScalarProperty Name="fontecontatto" ColumnName="fontecontatto" />
+                <ScalarProperty Name="contattoprincipale" ColumnName="contattoprincipale" />
+                <ScalarProperty Name="settore" ColumnName="settore" />
+                <ScalarProperty Name="sensazioni" ColumnName="sensazioni" />
+                <ScalarProperty Name="dipendenti" ColumnName="dipendenti" />
+                <ScalarProperty Name="fatturato" ColumnName="fatturato" />
+                <ScalarProperty Name="aliasazienda" ColumnName="aliasazienda" />
+                <ScalarProperty Name="pagamento" ColumnName="pagamento" />
+                <ScalarProperty Name="ric2" ColumnName="ric2" />
+                <ScalarProperty Name="ric1" ColumnName="ric1" />
+                <ScalarProperty Name="sco4" ColumnName="sco4" />
+                <ScalarProperty Name="sco3" ColumnName="sco3" />
+                <ScalarProperty Name="sco2" ColumnName="sco2" />
+                <ScalarProperty Name="sco1" ColumnName="sco1" />
+                <ScalarProperty Name="mezzoprivacy" ColumnName="mezzoprivacy" />
+                <ScalarProperty Name="dataprivacy" ColumnName="dataprivacy" />
+                <ScalarProperty Name="utente" ColumnName="utente" />
+                <ScalarProperty Name="giorniallarme1" ColumnName="giorniallarme1" />
+                <ScalarProperty Name="codiceabarre" ColumnName="codiceabarre" />
+                <ScalarProperty Name="codicedagestionale" ColumnName="codicedagestionale" />
+                <ScalarProperty Name="paese" ColumnName="paese" />
+                <ScalarProperty Name="cin" ColumnName="cin" />
+                <ScalarProperty Name="checkdigit" ColumnName="checkdigit" />
+                <ScalarProperty Name="iban" ColumnName="iban" />
+                <ScalarProperty Name="bic" ColumnName="bic" />
+                <ScalarProperty Name="banca" ColumnName="banca" />
+                <ScalarProperty Name="CCOR" ColumnName="CCOR" />
+                <ScalarProperty Name="NOTEVAR" ColumnName="NOTEVAR" />
+                <ScalarProperty Name="CODICEC" ColumnName="CODICEC" />
+                <ScalarProperty Name="ULTVIS" ColumnName="ULTVIS" />
+                <ScalarProperty Name="ABI" ColumnName="ABI" />
+                <ScalarProperty Name="CAB" ColumnName="CAB" />
+                <ScalarProperty Name="CODF" ColumnName="CODF" />
+                <ScalarProperty Name="PIVA" ColumnName="PIVA" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="maillegale" ColumnName="maillegale" />
+                <ScalarProperty Name="internetlegale" ColumnName="internetlegale" />
+                <ScalarProperty Name="distanzalegale" ColumnName="distanzalegale" />
+                <ScalarProperty Name="gruppo" ColumnName="gruppo" />
+                <ScalarProperty Name="faxlegale" ColumnName="faxlegale" />
+                <ScalarProperty Name="telefono2legale" ColumnName="telefono2legale" />
+                <ScalarProperty Name="telefono1legale" ColumnName="telefono1legale" />
+                <ScalarProperty Name="nazionelegale" ColumnName="nazionelegale" />
+                <ScalarProperty Name="regionelegale" ColumnName="regionelegale" />
+                <ScalarProperty Name="sottozonalegale" ColumnName="sottozonalegale" />
+                <ScalarProperty Name="siglalegale" ColumnName="siglalegale" />
+                <ScalarProperty Name="cittàlegale" ColumnName="cittàlegale" />
+                <ScalarProperty Name="comunelegale" ColumnName="comunelegale" />
+                <ScalarProperty Name="caplegale" ColumnName="caplegale" />
+                <ScalarProperty Name="civicolegale" ColumnName="civicolegale" />
+                <ScalarProperty Name="indirizzolegale" ColumnName="indirizzolegale" />
+                <ScalarProperty Name="denominazione" ColumnName="denominazione" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

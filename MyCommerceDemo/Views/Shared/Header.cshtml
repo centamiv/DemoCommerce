@@ -1,11 +1,10 @@
-﻿<!-- Header -->
-<header id="wn__header" class="header__area header__absolute sticky__header">
+﻿<header id="wn__header" class="header__area header__absolute" style="background-color: white;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 col-sm-6 col-6 col-lg-2">
                 <div class="logo">
                     <a href="/Home/Index">
-                        <img src="~/Content/images/logo/logo.png" alt="logo images">
+                        <img src="~/Content/@Const.IdAziendaMaster/logo.png" alt="logo images">
                     </a>
                 </div>
             </div>
@@ -13,7 +12,7 @@
                 <nav class="mainmenu__nav">
                     <ul class="meninmenu d-flex justify-content-start">
                         <li>
-                            @Html.ActionLink("CATEGORIE", "List", "Category")
+                            @Html.ActionLink("MARCHE", "Categories", "Product")
                         </li>
                         <li>
                             @Html.ActionLink("PRODOTTI", "List", "Product")
@@ -40,7 +39,7 @@
                     else
                     {
                         <li style="padding-right: 26px">
-                            Benvenuto @((Session["User"] as MyCommerceDemo.Database.tuteweb).utente)
+                            @Html.ActionLink((Session["User"] as MyCommerceDemo.Database.tuteweb).utente.ToUpper(), "Menu", "User")
                         </li>
 
                         <li style="padding-right: 26px">
@@ -49,8 +48,8 @@
                     }
 
                     @*<li class="shopcart">
-            <a class="cartbox_active" href="/cart/show"></a>
-        </li>*@
+                            <a class="cartbox_active" href="/cart/show"></a>
+                        </li>*@
                     <li class="shop_search"><a class="search__active" href="#"></a></li>
 
                 </ul>
@@ -124,11 +123,11 @@
 <!-- //Header -->
 <!-- Start Search Popup -->
 <div class="brown--color box-search-content search_active block-bg close__top">
-    <form id="search_mini_form" class="minisearch" action="#">
+    <form id="search_mini_form" class="minisearch" method="get" action="/product/list">
         <div class="field__search">
-            <input type="text" placeholder="Cerca nel sito...">
+            <input type="text" placeholder="Cerca nel sito..." id="search" name="search">
             <div class="action">
-                <a href="#"><i class="zmdi zmdi-search"></i></a>
+                <a href="#" onclick="document.getElementById('search_mini_form').submit()"><i class="zmdi zmdi-search"></i></a>
             </div>
         </div>
     </form>

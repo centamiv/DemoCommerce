@@ -12,9 +12,15 @@ namespace MyCommerceDemo.Models
 
         public List<Product> Products { get; set; }
 
+        public string Search { get; set; }
+        public string CategoryDesc { get; set; }
+        public int Category { get; set; }
+
         public int ProductTotal { get; set; }
         public int ProductFrom { get; set; }
-        public int Page { get; set; }
+        public int ProductTo { get; set; }
+        public int PageTotal { get; set; }
+        public int CurrentPage { get; set; }
     }
 
     public class Product
@@ -67,22 +73,22 @@ namespace MyCommerceDemo.Models
 
                 if (sconto1.HasValue && sconto1.Value != 0)
                 {
-                    prezzo = prezzo - (prezzo * sconto1.Value / 100);
+                    prezzo -= (prezzo * sconto1.Value / 100);
                 }
 
                 if (sconto2.HasValue && sconto2.Value != 0)
                 {
-                    prezzo = prezzo - (prezzo * sconto2.Value / 100);
+                    prezzo -= (prezzo * sconto2.Value / 100);
                 }
 
                 if (ricarico1.HasValue && ricarico1.Value != 0)
                 {
-                    prezzo = prezzo - (prezzo * ricarico1.Value / 100);
+                    prezzo += (prezzo * ricarico1.Value / 100);
                 }
 
                 if (ricarico2.HasValue && ricarico2.Value != 0)
                 {
-                    prezzo = prezzo - (prezzo * ricarico2.Value / 100);
+                    prezzo += (prezzo * ricarico2.Value / 100);
                 }
 
                 return Math.Round(prezzo, 2);
