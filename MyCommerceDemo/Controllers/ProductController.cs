@@ -38,7 +38,7 @@ namespace MyCommerceDemo.Controllers
                 model.Add(item, 0);
             }
 
-            var listini = _db.listinimarche.Take(10)
+            var listini = _db.listinimarche
                 .Where(i => i.datainiziovalidità == null || i.datainiziovalidità <= DateTime.Today)
                 .Where(i => i.datafinevalidità >= DateTime.Today)
                 .Where(i => i.inuso == "Si")
@@ -66,7 +66,7 @@ namespace MyCommerceDemo.Controllers
             var model = new ListProductViewModel();
             var from = (page - 1) * pageLen;
 
-            var listini = _db.listinimarche.Take(10)
+            var listini = _db.listinimarche
                 .Where(i => i.datainiziovalidità == null || i.datainiziovalidità <= DateTime.Today)
                 .Where(i => i.datafinevalidità >= DateTime.Today)
                 .Where(i => i.inuso == "Si")
@@ -84,7 +84,7 @@ namespace MyCommerceDemo.Controllers
                 }
                 if (!string.IsNullOrEmpty(search))
                 {
-                    resultList = resultList.Where(i => i.descrizionebrevearticolo.ToUpper().Contains(search.ToUpper())).ToList();
+                    resultList = resultList.Where(i => i.descrizionebrevearticolo.ToUpper().Contains(search.ToUpper()) || i.codicearticolo.ToUpper().Contains(search.ToUpper())).ToList();
                 }
                 results.AddRange(resultList);
 

@@ -162,6 +162,7 @@ namespace MyCommerceDemo.Controllers
                 model.siglalegale = sigla;
                 model.telefono1legale = telefono;
                 model.mailcontauno = email;
+                model.clientecontatto = "Contatto";
                 //model.escludidaelencoclienti
                 if (idCliente == 0)
                 {

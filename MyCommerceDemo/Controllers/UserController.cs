@@ -128,6 +128,7 @@ namespace MyCommerceDemo.Controllers
             model.siglalegale = sigla;
             model.telefono1legale = telefono;
             model.mailcontauno = email;
+            model.clientecontatto = "Contatto";
             //model.escludidaelencoclienti
             if (idCliente == 0)
             {
@@ -208,7 +209,8 @@ namespace MyCommerceDemo.Controllers
                         denominazione = ragsoc,
                         contattouno = nome + " " + cognome,
                         PIVA = piva,
-                        mailcontauno = email
+                        mailcontauno = email,
+                        clientecontatto = "Contatto"
                     };
                     _db.CLIENTI.Add(newCliente);
                     _db.SaveChanges();
